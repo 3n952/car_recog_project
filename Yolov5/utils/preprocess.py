@@ -76,7 +76,7 @@ class json2yololabel():
                         cy = round(row['y'] / height, 5)
                         cwidth = round(float(row['width']) / width, 5)
                         cheight = round(float(row['height']) / height, 5)
-                        anno.write(f'{row['label']} {cx} {cy} {cwidth} {cheight}\n')
+                        anno.write(f'{row["label"]} {cx} {cy} {cwidth} {cheight}\n')
 
                 
 if __name__ == '__main__':

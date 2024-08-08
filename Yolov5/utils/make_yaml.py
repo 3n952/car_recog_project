@@ -9,7 +9,7 @@ import yaml
 
 def class_categorized(json_dir):
     files = glob(os.path.join(json_dir, '*.json'))
-    df = pd.DataFrame(columns=['file_name','car_class', 'x', 'y', 'width', 'height'])
+    df = pd.DataFrame(columns=['file_name','car_class'])
 
     for file in files:
 
@@ -30,7 +30,7 @@ def class_categorized(json_dir):
     return df
 
 def label_category_dict(df):
-    df = string2int(df)
+    df,_ = string2int(df)
     df_unique = df.drop_duplicates(subset=['label'])
     selected_columns = df_unique[['label', 'car_class']]
     data_dict = selected_columns.to_dict(orient='records')
@@ -56,11 +56,12 @@ def make_yaml_func(lc_dict):
 
 if __name__ == '__main__':
 
+    print('label - class 딕셔너리 형태의 yaml 파일 생성 시작')
+    
     input_annodir = input('input your annotation directory:\n')
     new_df = class_categorized(input_annodir)
     new_dict = label_category_dict(new_df)
 
-    print('label - class 딕셔너리 형태의 yaml 파일 생성 시작')
     make_yaml_func(new_dict)
     print('생성 완료')
 
