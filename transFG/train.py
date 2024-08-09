@@ -57,15 +57,15 @@ def save_model(args, model):
     model_to_save = model.module if hasattr(model, 'module') else model
     model_checkpoint = os.path.join(args.output_dir, "%s_checkpoint.bin" % args.name)
 
-    # if args.fp16: # 32비트 대신 16비트를 사용할지 여부
-    #     checkpoint = {
-    #         'model': model_to_save.state_dict(),
-    #         'amp': amp.state_dict()
-    #     }
-    # else:
-    #     checkpoint = {
-    #         'model': model_to_save.state_dict(),
-    #     }
+    if args.fp16: # 32비트 대신 16비트를 사용할지 여부
+        checkpoint = {
+            'model': model_to_save.state_dict(),
+            'amp': amp.state_dict()
+        }
+    else:
+        checkpoint = {
+            'model': model_to_save.state_dict(),
+        }
     checkpoint = {
             'model': model_to_save.state_dict(),}
     
@@ -79,16 +79,16 @@ def setup(args):
     config.slide_step = args.slide_step
     if args.dataset == "custom":
         num_classes = pd.read_csv('train_x.csv')['label'].nunique() # train_x의 클래스 수
-    elif args.dataset == "CUB_200_2011":
-        num_classes = 200
-    elif args.dataset == "car":
-        num_classes = 196
-    elif args.dataset == "nabirds":
-        num_classes = 555
-    elif args.dataset == "dog":
-        num_classes = 120
-    elif args.dataset == "INat2017":
-        num_classes = 5089
+    # elif args.dataset == "CUB_200_2011":
+    #     num_classes = 200
+    # elif args.dataset == "car":
+    #     num_classes = 196
+    # elif args.dataset == "nabirds":
+    #     num_classes = 555
+    # elif args.dataset == "dog":
+    #     num_classes = 120
+    # elif args.dataset == "INat2017":
+    #     num_classes = 5089
 
     model = VisionTransformer(config, args.img_size, zero_head=True, num_classes=num_classes, smoothing_value=args.smoothing_value)
 
@@ -192,15 +192,15 @@ def train(args, model):
     t_total = args.num_steps
     scheduler = WarmupCosineSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
     
-    # if args.fp16:
-    #     model, optimizer = amp.initialize(models=model,
-    #                                       optimizers=optimizer,
-    #                                       opt_level=args.fp16_opt_level)
-    #     amp._amp_state.loss_scalers[0]._loss_scale = 2**20
+    if args.fp16:
+        model, optimizer = amp.initialize(models=model,
+                                          optimizers=optimizer,
+                                          opt_level=args.fp16_opt_level)
+        amp._amp_state.loss_scalers[0]._loss_scale = 2**20
 
     # Distributed training
-    # if args.local_rank != -1:
-    #     model = DDP(model, message_size=250000000, gradient_predivide_factor=get_world_size())
+    if args.local_rank != -1:
+        model = DDP(model, message_size=250000000, gradient_predivide_factor=get_world_size())
 
     # Train!
     logger.warning("***** Running training *****")
@@ -246,9 +246,9 @@ def train(args, model):
 
             if args.gradient_accumulation_steps > 1:
                 loss = loss / args.gradient_accumulation_steps
-            # if args.fp16: # 32비트 대신 16비트를 사용할지 여부
-            #     with amp.scale_loss(loss, optimizer) as scaled_loss:
-            #         scaled_loss.backward()
+            if args.fp16: # 32비트 대신 16비트를 사용할지 여부
+                with amp.scale_loss(loss, optimizer) as scaled_loss:
+                    scaled_loss.backward()
             else:
                 loss.backward()
 
@@ -303,15 +303,15 @@ def main():
     # Required parameters 
     parser.add_argument("--name", required=True,
                         help="Name of this run. Used for monitoring.")
-    parser.add_argument("--dataset", choices=["custom","CUB_200_2011", "car", "dog", "nabirds", "INat2017"], default="CUB_200_2011",
+    parser.add_argument("--dataset", choices=["custom","CUB_200_2011", "car", "dog", "nabirds", "INat2017"], default="custom",
                         help="Which dataset.")
-    parser.add_argument('--data_root', type=str, default='/transfg/2_55_experiment/datasets')
+    parser.add_argument('--data_root', type=str, default='./datasets/custom')
     parser.add_argument('--dtype', type= int, default=0)
     parser.add_argument("--model_type", choices=["ViT-B_16", "ViT-B_32", "ViT-L_16",
                                                  "ViT-L_32", "ViT-H_14"],
                         default="ViT-B_16",
                         help="Which variant to use.")
-    parser.add_argument("--pretrained_dir", type=str, default="/data/transfg/2_55_experiment/ViT-B_16.npz", 
+    parser.add_argument("--pretrained_dir", type=str, default="./ViT-B_16.npz", 
     #parser.add_argument("--pretrained_dir", type=str, default="/data/transfg/2_55_experiment/imagenet21k_ViT-B_32.npz",
                         help="Where to search for pretrained ViT models.")
     parser.add_argument("--pretrained_model", type=str, default=None,
