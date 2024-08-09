@@ -15,13 +15,15 @@ import torch.distributed as dist
 
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
-from apex import amp
-from apex.parallel import DistributedDataParallel as DDP
+# from apex import amp
+# from apex.parallel import DistributedDataParallel as DDP
 
 from models.modeling import VisionTransformer, CONFIGS
 from utils.scheduler import WarmupLinearSchedule, WarmupCosineSchedule
 from utils.data_utils import get_loader
-from utils.dist_util import get_world_size
+from utils.dist_util import get_world_size 
+
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 
@@ -46,33 +48,38 @@ def simple_accuracy(preds, labels):
     return (preds == labels).mean()
 
 def reduce_mean(tensor, nprocs):
-    rt = tensor.clone()
-    dist.all_reduce(rt, op=dist.ReduceOp.SUM)
+    rt = tensor.clone() # tensor copy
+    dist.all_reduce(rt, op=dist.ReduceOp.SUM) # 모든 프로세스에 존재하는 모든 텐서들의 합을 얻기 위해
     rt /= nprocs
     return rt
 
 def save_model(args, model):
     model_to_save = model.module if hasattr(model, 'module') else model
     model_checkpoint = os.path.join(args.output_dir, "%s_checkpoint.bin" % args.name)
-    if args.fp16:
-        checkpoint = {
-            'model': model_to_save.state_dict(),
-            'amp': amp.state_dict()
-        }
-    else:
-        checkpoint = {
-            'model': model_to_save.state_dict(),
-        }
+
+    # if args.fp16: # 32비트 대신 16비트를 사용할지 여부
+    #     checkpoint = {
+    #         'model': model_to_save.state_dict(),
+    #         'amp': amp.state_dict()
+    #     }
+    # else:
+    #     checkpoint = {
+    #         'model': model_to_save.state_dict(),
+    #     }
+    checkpoint = {
+            'model': model_to_save.state_dict(),}
+    
     torch.save(checkpoint, model_checkpoint)
-    logger.info("Saved model checkpoint to [DIR: %s]", args.output_dir)
+    logger.warning("Saved model checkpoint to [DIR: %s]", args.output_dir)
 
 def setup(args):
     # Prepare model
-    config = CONFIGS[args.model_type]
-    config.split = args.split
+    config = CONFIGS[args.model_type] # VIT-B-16
+    config.split = args.split # defalut - non-overlap
     config.slide_step = args.slide_step
-
-    if args.dataset == "CUB_200_2011":
+    if args.dataset == "custom":
+        num_classes = pd.read_csv('train_x.csv')['label'].nunique() # train_x의 클래스 수
+    elif args.dataset == "CUB_200_2011":
         num_classes = 200
     elif args.dataset == "car":
         num_classes = 196
@@ -83,7 +90,7 @@ def setup(args):
     elif args.dataset == "INat2017":
         num_classes = 5089
 
-    model = VisionTransformer(config, args.img_size, zero_head=True, num_classes=num_classes,                                                   smoothing_value=args.smoothing_value)
+    model = VisionTransformer(config, args.img_size, zero_head=True, num_classes=num_classes, smoothing_value=args.smoothing_value)
 
     model.load_from(np.load(args.pretrained_dir))
     if args.pretrained_model is not None:
@@ -92,9 +99,9 @@ def setup(args):
     model.to(args.device)
     num_params = count_parameters(model)
 
-    logger.info("{}".format(config))
-    logger.info("Training parameters %s", args)
-    logger.info("Total Parameter: \t%2.1fM" % num_params)
+    logger.warning("{}".format(config))
+    logger.warning("Training parameters %s", args)
+    logger.warning("Total Parameter: \t%2.1fM" % num_params)
     return args, model
 
 def count_parameters(model):
@@ -108,17 +115,17 @@ def set_seed(args):
     if args.n_gpu > 0:
         torch.cuda.manual_seed_all(args.seed)
 
-def valid(args, model, writer, test_loader, global_step):
+def valid(args, model, writer, val_loader, global_step, dtype=1):
     # Validation!
     eval_losses = AverageMeter()
 
-    logger.info("***** Running Validation *****")
-    logger.info("  Num steps = %d", len(test_loader))
-    logger.info("  Batch size = %d", args.eval_batch_size)
+    logger.warning("***** Running Validation *****")
+    logger.warning("  Num steps = %d", len(val_loader))
+    logger.warning("  Batch size = %d", args.eval_batch_size)
 
     model.eval()
     all_preds, all_label = [], []
-    epoch_iterator = tqdm(test_loader,
+    epoch_iterator = tqdm(val_loader,
                           desc="Validating... (loss=X.X)",
                           bar_format="{l_bar}{r_bar}",
                           dynamic_ncols=True,
@@ -131,7 +138,8 @@ def valid(args, model, writer, test_loader, global_step):
             logits = model(x)
 
             eval_loss = loss_fct(logits, y)
-            eval_loss = eval_loss.mean()
+            eval_loss = eval_loss.mean() 
+            #writer.add_scalar("Loss/eval", eval_loss, step)
             eval_losses.update(eval_loss.item())
 
             preds = torch.argmax(logits, dim=-1)
@@ -151,19 +159,19 @@ def valid(args, model, writer, test_loader, global_step):
     all_preds, all_label = all_preds[0], all_label[0]
     accuracy = simple_accuracy(all_preds, all_label)
     accuracy = torch.tensor(accuracy).to(args.device)
-    dist.barrier()
+    #dist.barrier()
     val_accuracy = reduce_mean(accuracy, args.nprocs)
     val_accuracy = val_accuracy.detach().cpu().numpy()
 
-    logger.info("\n")
-    logger.info("Validation Results")
-    logger.info("Global Steps: %d" % global_step)
-    logger.info("Valid Loss: %2.5f" % eval_losses.avg)
-    logger.info("Valid Accuracy: %2.5f" % val_accuracy)
+    logger.warning("\n")
+    logger.warning("Validation Results")
+    logger.warning("Global Steps: %d" % global_step)
+    logger.warning("Valid Loss: %2.5f" % eval_losses.avg)
+    logger.warning("Valid Accuracy: %2.5f" % val_accuracy)
     if args.local_rank in [-1, 0]:
-        writer.add_scalar("test/accuracy", scalar_value=val_accuracy, global_step=global_step)
+        writer.add_scalar("val/accuracy", scalar_value=accuracy, global_step=global_step)
         
-    return val_accuracy
+    return accuracy
 
 def train(args, model):
     """ Train the model """
@@ -174,7 +182,7 @@ def train(args, model):
     args.train_batch_size = args.train_batch_size // args.gradient_accumulation_steps
 
     # Prepare dataset
-    train_loader, test_loader = get_loader(args)
+    train_loader, val_loader, test_loader = get_loader(args)
 
     # Prepare optimizer and scheduler
     optimizer = torch.optim.SGD(model.parameters(),
@@ -182,35 +190,32 @@ def train(args, model):
                                 momentum=0.9,
                                 weight_decay=args.weight_decay)
     t_total = args.num_steps
-    if args.decay_type == "cosine":
-        scheduler = WarmupCosineSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
-    else:
-        scheduler = WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
-
-    if args.fp16:
-        model, optimizer = amp.initialize(models=model,
-                                          optimizers=optimizer,
-                                          opt_level=args.fp16_opt_level)
-        amp._amp_state.loss_scalers[0]._loss_scale = 2**20
+    scheduler = WarmupCosineSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
+    
+    # if args.fp16:
+    #     model, optimizer = amp.initialize(models=model,
+    #                                       optimizers=optimizer,
+    #                                       opt_level=args.fp16_opt_level)
+    #     amp._amp_state.loss_scalers[0]._loss_scale = 2**20
 
     # Distributed training
-    if args.local_rank != -1:
-        model = DDP(model, message_size=250000000, gradient_predivide_factor=get_world_size())
+    # if args.local_rank != -1:
+    #     model = DDP(model, message_size=250000000, gradient_predivide_factor=get_world_size())
 
     # Train!
-    logger.info("***** Running training *****")
-    logger.info("  Total optimization steps = %d", args.num_steps)
-    logger.info("  Instantaneous batch size per GPU = %d", args.train_batch_size)
-    logger.info("  Total train batch size (w. parallel, distributed & accumulation) = %d",
+    logger.warning("***** Running training *****")
+    logger.warning("  Total optimization steps = %d", args.num_steps)
+    logger.warning("  Instantaneous batch size per GPU = %d", args.train_batch_size)
+    logger.warning("  Total train batch size (w. parallel, distributed & accumulation) = %d",
                 args.train_batch_size * args.gradient_accumulation_steps * (
                     torch.distributed.get_world_size() if args.local_rank != -1 else 1))
-    logger.info("  Gradient Accumulation steps = %d", args.gradient_accumulation_steps)
+    logger.warning("  Gradient Accumulation steps = %d", args.gradient_accumulation_steps)
 
     model.zero_grad()
     set_seed(args)  # Added here for reproducibility (even between python 2 and 3)
     losses = AverageMeter()
     global_step, best_acc = 0, 0
-    start_time = time.time()
+    start_time = time.time() 
     while True:
         model.train()
         epoch_iterator = tqdm(train_loader,
@@ -223,9 +228,9 @@ def train(args, model):
             batch = tuple(t.to(args.device) for t in batch)
             x, y = batch
 
-            loss, logits = model(x, y)-
-            loss = loss.mean()
-
+            loss, logits = model(x, y)
+            loss = loss.mean() 
+            #writer.add_scalar("Loss/train", loss, step)
             preds = torch.argmax(logits, dim=-1)
 
             if len(all_preds) == 0:
@@ -241,9 +246,9 @@ def train(args, model):
 
             if args.gradient_accumulation_steps > 1:
                 loss = loss / args.gradient_accumulation_steps
-            if args.fp16:
-                with amp.scale_loss(loss, optimizer) as scaled_loss:
-                    scaled_loss.backward()
+            # if args.fp16: # 32비트 대신 16비트를 사용할지 여부
+            #     with amp.scale_loss(loss, optimizer) as scaled_loss:
+            #         scaled_loss.backward()
             else:
                 loss.backward()
 
@@ -266,12 +271,12 @@ def train(args, model):
                     writer.add_scalar("train/lr", scalar_value=scheduler.get_lr()[0], global_step=global_step)
                 if global_step % args.eval_every == 0:
                     with torch.no_grad():
-                        accuracy = valid(args, model, writer, test_loader, global_step)
+                        accuracy = valid(args, model, writer, val_loader, global_step)
                     if args.local_rank in [-1, 0]:
                         if best_acc < accuracy:
                             save_model(args, model)
                             best_acc = accuracy
-                        logger.info("best accuracy so far: %f" % best_acc)
+                        logger.warning("best accuracy so far: %f" % best_acc)
                     model.train()
 
                 if global_step % t_total == 0:
@@ -282,30 +287,32 @@ def train(args, model):
         dist.barrier()
         train_accuracy = reduce_mean(accuracy, args.nprocs)
         train_accuracy = train_accuracy.detach().cpu().numpy()
-        logger.info("train accuracy so far: %f" % train_accuracy)
+        logger.warning("train accuracy so far: %f" % train_accuracy)
         losses.reset()
         if global_step % t_total == 0:
             break
 
     writer.close()
-    logger.info("Best Accuracy: \t%f" % best_acc)
-    logger.info("End Training!")
+    logger.warning("Best Accuracy: \t%f" % best_acc)
+    logger.warning("End Training!")
     end_time = time.time()
-    logger.info("Total Training Time: \t%f" % ((end_time - start_time) / 3600))
-
+    logger.warning("Total Training Time: \t%f" % (end_time - start_time))
+    
 def main():
     parser = argparse.ArgumentParser()
-    # Required parameters
+    # Required parameters 
     parser.add_argument("--name", required=True,
                         help="Name of this run. Used for monitoring.")
-    parser.add_argument("--dataset", choices=["CUB_200_2011", "car", "dog", "nabirds", "INat2017"], default="CUB_200_2011",
+    parser.add_argument("--dataset", choices=["custom","CUB_200_2011", "car", "dog", "nabirds", "INat2017"], default="CUB_200_2011",
                         help="Which dataset.")
-    parser.add_argument('--data_root', type=str, default='/opt/tiger/minist')
+    parser.add_argument('--data_root', type=str, default='/transfg/2_55_experiment/datasets')
+    parser.add_argument('--dtype', type= int, default=0)
     parser.add_argument("--model_type", choices=["ViT-B_16", "ViT-B_32", "ViT-L_16",
                                                  "ViT-L_32", "ViT-H_14"],
                         default="ViT-B_16",
                         help="Which variant to use.")
-    parser.add_argument("--pretrained_dir", type=str, default="/opt/tiger/minist/ViT-B_16.npz",
+    parser.add_argument("--pretrained_dir", type=str, default="/data/transfg/2_55_experiment/ViT-B_16.npz", 
+    #parser.add_argument("--pretrained_dir", type=str, default="/data/transfg/2_55_experiment/imagenet21k_ViT-B_32.npz",
                         help="Where to search for pretrained ViT models.")
     parser.add_argument("--pretrained_model", type=str, default=None,
                         help="load pretrained model")
@@ -313,11 +320,11 @@ def main():
                         help="The output directory where checkpoints will be written.")
     parser.add_argument("--img_size", default=448, type=int,
                         help="Resolution size")
-    parser.add_argument("--train_batch_size", default=16, type=int,
+    parser.add_argument("--train_batch_size", default=10, type=int,
                         help="Total batch size for training.")
-    parser.add_argument("--eval_batch_size", default=8, type=int,
+    parser.add_argument("--eval_batch_size", default=20, type=int,
                         help="Total batch size for eval.")
-    parser.add_argument("--eval_every", default=100, type=int,
+    parser.add_argument("--eval_every", default=300, type=int,
                         help="Run prediction on validation set every so many steps."
                              "Will always run one evaluation at the end of training.")
 
@@ -325,7 +332,7 @@ def main():
                         help="The initial learning rate for SGD.")
     parser.add_argument("--weight_decay", default=0, type=float,
                         help="Weight deay if we apply some.")
-    parser.add_argument("--num_steps", default=10000, type=int,
+    parser.add_argument("--num_steps", default=18000, type=int,
                         help="Total number of training epochs to perform.")
     parser.add_argument("--decay_type", choices=["cosine", "linear"], default="cosine",
                         help="How to decay the learning rate.")
@@ -357,22 +364,25 @@ def main():
                         help="Split method")
     parser.add_argument('--slide_step', type=int, default=12,
                         help="Slide step for overlap split")
-
+    
+    print('****************************0************************************')
     args = parser.parse_args()
-
+    print('****************************0.1************************************')
     # if args.fp16 and args.smoothing_value != 0:
     #     raise NotImplementedError("label smoothing not supported for fp16 training now")
-    args.data_root = '{}/{}'.format(args.data_root, args.dataset)
+    args.data_root = '{}\\{}'.format(args.data_root, args.dataset)
     # Setup CUDA, GPU & distributed training
     if args.local_rank == -1:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         args.n_gpu = torch.cuda.device_count()
+        print('****************************1************************************')
     else:  # Initializes the distributed backend which will take care of sychronizing nodes/GPUs
         torch.cuda.set_device(args.local_rank)
         device = torch.device("cuda", args.local_rank)
         torch.distributed.init_process_group(backend='nccl',
                                              timeout=timedelta(minutes=60))
         args.n_gpu = 1
+        print('****************************2************************************')
     args.device = device
     args.nprocs = torch.cuda.device_count()
 
@@ -390,6 +400,12 @@ def main():
     args, model = setup(args)
     # Training
     train(args, model)
-
+    
 if __name__ == "__main__":
+    df_train = pd.read_csv('train_x.csv') 
+    df_val = pd.read_csv('val_x.csv')
+    df_test = pd.read_csv('test_x.csv')
+    print(f'train data : {df_train.shape[0]}')
+    print(f'val data : {df_val.shape[0]}')
+    print(f'test data : {df_test.shape[0]}')
     main()

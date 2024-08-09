@@ -20,19 +20,18 @@ from scipy import ndimage
 
 import models.configs as configs
 
-#로그 생성
 logger = logging.getLogger(__name__)
 
-ATTENTION_Q = "MultiHeadDotProductAttention_1/query"
-ATTENTION_K = "MultiHeadDotProductAttention_1/key"
-ATTENTION_V = "MultiHeadDotProductAttention_1/value"
-ATTENTION_OUT = "MultiHeadDotProductAttention_1/out"
-FC_0 = "MlpBlock_3/Dense_0"
-FC_1 = "MlpBlock_3/Dense_1"
-ATTENTION_NORM = "LayerNorm_0"
-MLP_NORM = "LayerNorm_2"
+ATTENTION_Q = "MultiHeadDotProductAttention_1/query/"
+ATTENTION_K = "MultiHeadDotProductAttention_1/key/"
+ATTENTION_V = "MultiHeadDotProductAttention_1/value/"
+ATTENTION_OUT = "MultiHeadDotProductAttention_1/out/"
+FC_0 = "MlpBlock_3/Dense_0/"
+FC_1 = "MlpBlock_3/Dense_1/"
+ATTENTION_NORM = "LayerNorm_0/"
+MLP_NORM = "LayerNorm_2/"
 
-def np2th(weights, conv=False):
+def np2th(weights, conv=False): # weight 입력 받아서 transpose
     """Possibly convert HWIO to OIHW."""
     if conv:
         weights = weights.transpose([3, 2, 0, 1])
@@ -197,7 +196,7 @@ class Block(nn.Module):
         return x, weights
 
     def load_from(self, weights, n_block):
-        ROOT = f"Transformer/encoderblock_{n_block}"
+        ROOT = f"Transformer/encoderblock_{n_block}/"
         with torch.no_grad():
             query_weight = np2th(weights[pjoin(ROOT, ATTENTION_Q, "kernel")]).view(self.hidden_size, self.hidden_size).t()
             key_weight = np2th(weights[pjoin(ROOT, ATTENTION_K, "kernel")]).view(self.hidden_size, self.hidden_size).t()
@@ -378,5 +377,8 @@ def con_loss(features, labels):
 CONFIGS = {
     'ViT-B_16': configs.get_b16_config(),
     'ViT-B_32': configs.get_b32_config(),
+    'ViT-L_16': configs.get_l16_config(),
+    'ViT-L_32': configs.get_l32_config(),
+    'ViT-H_14': configs.get_h14_config(),
     'testing': configs.get_testing(),
 }
