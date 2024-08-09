@@ -1,4 +1,4 @@
-# Qbicware project - Fine-grained recognition (car class)
+# Fine-grained recognition (car class)
 
 
 ## <div align="center">how to use(usage)</div>
