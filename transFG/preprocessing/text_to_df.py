@@ -8,6 +8,16 @@ import shutil
 from sklearn.model_selection import train_test_split 
 from sklearn.preprocessing import LabelEncoder 
 
+
+def pa_cu_dir():
+    current_file_path = os.path.abspath(__file__)
+    current_dir = os.path.dirname(current_file_path)
+    relative_parent_dir = os.path.join(current_dir, '..')
+    parent_dir = os.path.abspath(relative_parent_dir)
+    return current_dir, parent_dir
+
+current_dir, parent_dir = pa_cu_dir
+
 classid = pd.read_csv('classid.csv',index_col=0)
 classid = classid[classid['class_id']!='car-02'] 
 classid = classid[classid['class_id']!='car-04']
@@ -23,16 +33,16 @@ for i in classid['label_']:
     except: 
         pass
 
-print('￿')
+print('------------')
 try:
-    os.mkdir('C:\\Users\\QBIC\\Desktop\\workspace\\docker\\2_55_experiment\\datasets\\custom')
+    os.mkdir('../datasets/custom')
 except: 
     print('already exist') 
     
 
 
-folder_list = sorted(os.listdir('C:\\Users\\QBIC\\Desktop\\workspace\\docker\\2_55_experiment\\datasets\\custom')) 
-path = 'C:\\Users\\QBIC\\Desktop\\workspace\\docker\\2_55_experiment\\make_data\\custom'
+folder_list = sorted(os.listdir(os.path.join(parent_dir, 'datasets/custom'))) 
+path = os.path.join(parent_dir, 'datasets/custom')
 for i in folder_list: 
     try:
         shutil.rmtree((os.path.join(path,i,'.ipynb_checkpoints')))
@@ -42,13 +52,11 @@ for i in folder_list:
         pass
 df = pd.DataFrame()
         
-path = r'C:\Users\QBIC\Desktop\workspace\docker\2_55_experiment\datasets\custom'
+#path = r'..\datasets\custom'
 for i in folder_list: 
     df_ = pd.DataFrame({'path': os.listdir(os.path.join(path,i)),'folder':i,'label_':i.split('.')[0]}) 
     #df = df.append(df_)
     df = pd.concat([df, df_], ignore_index=True)
-
-           
     
     
 
@@ -72,6 +80,6 @@ df.drop_duplicates('label').sort_values('label').reset_index(drop=True).drop('pa
 train_x,test_x_,train_y,test_y_ = train_test_split(df,df['label'],stratify=df['label'],test_size=0.2,random_state=22)
 val_x,test_x,val_y,test_y = train_test_split(test_x_,test_y_,stratify=test_y_,test_size=0.5,random_state=22) 
 
-train_x.to_csv(r'C:\Users\QBIC\Desktop\workspace\docker\2_55_experiment\train_x.csv')
-val_x.to_csv(r'C:\Users\QBIC\Desktop\workspace\docker\2_55_experiment\val_x.csv')
-test_x.to_csv(r'C:\Users\QBIC\Desktop\workspace\docker\2_55_experiment\test_x.csv')
+train_x.to_csv(os.path.join(parent_dir, 'train_x.csv'))
+val_x.to_csv(os.path.join(parent_dir, 'val_x.csv'))
+test_x.to_csv(os.path.join(parent_dir, 'test_x.csv'))
