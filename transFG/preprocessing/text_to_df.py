@@ -35,7 +35,7 @@ for i in classid['label_']:
 
 print('------------')
 try:
-    os.mkdir('../datasets/custom')
+    os.mkdir(os.path.join(parent_dir, 'datasets/custom'))
 except: 
     print('already exist') 
     
@@ -75,7 +75,7 @@ df = df.drop('folder',axis=1)
 
 df = df.sample(df.shape[0])
 
-df.drop_duplicates('label').sort_values('label').reset_index(drop=True).drop('path',axis=1).to_csv('../label_encoding.csv') 
+df.drop_duplicates('label').sort_values('label').reset_index(drop=True).drop('path',axis=1).to_csv('label_encoding.csv') 
 
 train_x,test_x_,train_y,test_y_ = train_test_split(df,df['label'],stratify=df['label'],test_size=0.2,random_state=22)
 val_x,test_x,val_y,test_y = train_test_split(test_x_,test_y_,stratify=test_y_,test_size=0.5,random_state=22) 
