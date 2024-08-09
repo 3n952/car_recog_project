@@ -81,7 +81,7 @@ class json2yololabel():
                 
 if __name__ == '__main__':
 
-    root_dir = 'D:\\cctv_datasets\\cm\\cm_datasets'
+    root_dir = '/datasets'
 
     tanno_dir = root_dir + '\\Training\\annotations'
     vanno_dir = root_dir + '\\Validation\\annotations'
