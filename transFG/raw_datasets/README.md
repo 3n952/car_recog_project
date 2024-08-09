@@ -2,9 +2,8 @@
 
 괄호안은 예시, 괄호 내용은 annotation(json)참고 
 
-- directory  
 
-root= /transfg/raw_datasets  
+root: /transfg/raw_datasets  
 
     ㄴ 라벨링데이터  
         ㄴ 차종외관인식    
