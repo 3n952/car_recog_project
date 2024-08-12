@@ -43,6 +43,11 @@ def string2int(df):
     df['label'], uniques = pd.factorize(df['car_class'])
     return df, uniques
 
+def string2zero(df):
+    df, _ = string2int(df)
+    df['label'] = 0
+    return df
+
 # json2txt yolo annotation label
 class json2yololabel():
     def __init__(self, json_dir, label_dir):
@@ -60,7 +65,7 @@ class json2yololabel():
         print()
         print('label list:', uniques)
     
-    def yololabeling(self):
+    def yololabeling_interclass(self):
         width = float(3840.)
         height = float(2160.)
 
@@ -77,11 +82,28 @@ class json2yololabel():
                         cwidth = round(float(row['width']) / width, 5)
                         cheight = round(float(row['height']) / height, 5)
                         anno.write(f'{row["label"]} {cx} {cy} {cwidth} {cheight}\n')
+    
+    def yololabeling_justcar(self):
+        width = float(3840.)
+        height = float(2160.)
 
+        for i in range(len(os.listdir(self.json_dir))):
+            df = string2zero(json2df(glob(os.path.join(self.json_dir, '*.json'))[i]))
+
+            for imgname, contents in df.groupby(['file_name']):
+                fname = os.path.join(self.label_dir, imgname[0]+'.txt')
+                
+                with open(fname, 'w') as anno2:
+                    for _, row in contents.iterrows():
+                        cx = round(row['x'] / width, 5)
+                        cy = round(row['y'] / height, 5)
+                        cwidth = round(float(row['width']) / width, 5)
+                        cheight = round(float(row['height']) / height, 5)
+                        anno2.write(f'{row["label"]} {cx} {cy} {cwidth} {cheight}\n')
                 
 if __name__ == '__main__':
 
-    root_dir = '/datasets'
+    root_dir = 'D:\\cctv_datasets_yolo\\cm\\cm_datasets'
 
     tanno_dir = root_dir + '\\Training\\annotations'
     vanno_dir = root_dir + '\\Validation\\annotations'
@@ -89,21 +111,35 @@ if __name__ == '__main__':
     tlabel_dir = root_dir + '\\Training\\labels'
     vlabel_dir = root_dir + '\\Validation\\labels'
 
-    check = input('train: input"t"\nvalidation: input"v"\n')
+    try:
+        os.makedirs(tlabel_dir, exist_ok=False)
+        os.makedirs(vlabel_dir, exist_ok=False)
+        print('mkdir success')
+    except FileExistsError:
+        print('already exist(label directory)')
+
+    check = input('train mode: input"t"\nvalidation mode: input"v"\n')
 
 
         # label for train dataset
-    if check =='t':
+    if check =='t': #train
         tlabeling = json2yololabel(tanno_dir, tlabel_dir)
-        tlabeling.yololabeling()
+
+        # justcar => 첫번째줄 실행, intercar => 두번째줄 실행
+        tlabeling.yololabeling_justcar
+        #tlabeling.yololabeling()
         
-    elif check =='v':
+    elif check =='v': #validation
         # label for val dataset
         vlabeling = json2yololabel(vanno_dir, vlabel_dir)
-        vlabeling.yololabeling()
+
+        # justcar => 첫번째줄 실행, intercar => 두번째줄 실행
+        vlabeling.yololabeling_justcar
+        #vlabeling.yololabeling()
+
     else:
         print('check yout input.')
-        check = input('train: input\t t\nvalidation: input\t v')
+        check = input('train mode: input"t"\nvalidation mode: input"v"\n')
 
 
    
