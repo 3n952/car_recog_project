@@ -126,7 +126,7 @@ if __name__ == '__main__':
         tlabeling = json2yololabel(tanno_dir, tlabel_dir)
 
         # justcar => 첫번째줄 실행, intercar => 두번째줄 실행
-        tlabeling.yololabeling_justcar
+        tlabeling.yololabeling_justcar()
         #tlabeling.yololabeling()
         
     elif check =='v': #validation
@@ -134,7 +134,7 @@ if __name__ == '__main__':
         vlabeling = json2yololabel(vanno_dir, vlabel_dir)
 
         # justcar => 첫번째줄 실행, intercar => 두번째줄 실행
-        vlabeling.yololabeling_justcar
+        vlabeling.yololabeling_justcar()
         #vlabeling.yololabeling()
 
     else:
