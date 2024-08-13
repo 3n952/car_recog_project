@@ -18,3 +18,9 @@ root: /transfg/raw_datasets
                 ㄴ ([cr06]호계사거리)  
                     ㄴ (01번)  
                         ㄴ ~~~.jpg, ~~~.jpg,  
+
+
+
+### 이미지 크롭해서 저장하기
+
+ 이후 datasets/custom 디렉토리 안에 크롭된 이미지들이 저장되어 있어야 함.

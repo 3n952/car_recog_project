@@ -15,13 +15,13 @@ import torch.distributed as dist
 
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
-# from apex import amp
-# from apex.parallel import DistributedDataParallel as DDP
+from apex import amp
+from apex.parallel import DistributedDataParallel as DDP
 
 from models.modeling import VisionTransformer, CONFIGS
 from utils.scheduler import WarmupLinearSchedule, WarmupCosineSchedule
 from utils.data_utils import get_loader
-from utils.dist_util import get_world_size 
+from utils.dist_utils import get_world_size 
 
 import pandas as pd
 
@@ -192,15 +192,15 @@ def train(args, model):
     t_total = args.num_steps
     scheduler = WarmupCosineSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
     
-    if args.fp16:
-        model, optimizer = amp.initialize(models=model,
-                                          optimizers=optimizer,
-                                          opt_level=args.fp16_opt_level)
-        amp._amp_state.loss_scalers[0]._loss_scale = 2**20
+    # if args.fp16:
+    #     model, optimizer = amp.initialize(models=model,
+    #                                       optimizers=optimizer,
+    #                                       opt_level=args.fp16_opt_level)
+    #     amp._amp_state.loss_scalers[0]._loss_scale = 2**20
 
     # Distributed training
-    if args.local_rank != -1:
-        model = DDP(model, message_size=250000000, gradient_predivide_factor=get_world_size())
+    # if args.local_rank != -1:
+    #     model = DDP(model, message_size=250000000, gradient_predivide_factor=get_world_size())
 
     # Train!
     logger.warning("***** Running training *****")
@@ -305,13 +305,13 @@ def main():
                         help="Name of this run. Used for monitoring.")
     parser.add_argument("--dataset", choices=["custom","CUB_200_2011", "car", "dog", "nabirds", "INat2017"], default="custom",
                         help="Which dataset.")
-    parser.add_argument('--data_root', type=str, default='./datasets/custom')
+    parser.add_argument('--data_root', type=str, default= r'C:\Users\QBIC\Desktop\workspace\docker\2_55_experiment\datasets') #'./datasets')
     parser.add_argument('--dtype', type= int, default=0)
     parser.add_argument("--model_type", choices=["ViT-B_16", "ViT-B_32", "ViT-L_16",
                                                  "ViT-L_32", "ViT-H_14"],
                         default="ViT-B_16",
                         help="Which variant to use.")
-    parser.add_argument("--pretrained_dir", type=str, default="./ViT-B_16.npz", 
+    parser.add_argument("--pretrained_dir", type=str, default= r'C:\Users\QBIC\Desktop\workspace\docker\2_55_experiment\ViT-B_16.npz', #"./ViT-B_16.npz", 
     #parser.add_argument("--pretrained_dir", type=str, default="/data/transfg/2_55_experiment/imagenet21k_ViT-B_32.npz",
                         help="Where to search for pretrained ViT models.")
     parser.add_argument("--pretrained_model", type=str, default=None,

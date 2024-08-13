@@ -7,7 +7,7 @@ import torch
 from torchvision import transforms
 from torch.utils.data import DataLoader, RandomSampler, DistributedSampler, SequentialSampler
 
-from .dataset import CUB, CarsDataset, NABirds, dogs, INat2017, custom
+from .dataset import custom_dataloader
 from .autoaugment import AutoAugImageNetPolicy
 
 logger = logging.getLogger(__name__)
@@ -32,9 +32,9 @@ def get_loader(args):
                                     transforms.ToTensor(),
                                     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
         print(args.data_root)
-        trainset = custom(root=args.data_root, dtype=0, transform = train_transform)
-        valset = custom(root=args.data_root, dtype=1, transform = val_transform)
-        testset = custom(root=args.data_root, dtype=2, transform = test_transform) 
+        trainset = custom_dataloader(root=args.data_root, dtype=0, transform = train_transform)
+        valset = custom_dataloader(root=args.data_root, dtype=1, transform = val_transform)
+        testset = custom_dataloader(root=args.data_root, dtype=2, transform = test_transform) 
     
     else:
         print('build new get_loader function')

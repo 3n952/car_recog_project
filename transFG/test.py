@@ -42,7 +42,8 @@ test_transform=transforms.Compose([transforms.Resize((600, 600), Image.BILINEAR)
                             transforms.ToTensor(),
                             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
-testset = custom(root='/data/TransFG_experiment/datasets/custom', dtype=2, transform = test_transform) 
+# test set 구성
+testset = custom(root='datasets/custom', dtype=2, transform = test_transform) 
 
 test_sampler = SequentialSampler(testset)#if args.local_rank == -1 else DistributedSampler(testset) #SequentialSampler : 항상 같은 순서
 test_loader = DataLoader(testset,
@@ -90,7 +91,7 @@ all_label = np.array(sum(all_label,[]))
 test = pd.read_csv('test_x.csv',index_col=0)
 test['추론'] = all_preds 
 test.rename({'label':'정답','label_':'정답_차량이름'},axis=1) 
-test.to_csv('all_result.csv')
+test.to_csv('results/all_result.csv')
 
 print('Accuracy :',accuracy_score(all_label, all_preds)) 
 print('Precision :',precision_score(all_label, all_preds, average='weighted')) 
@@ -101,7 +102,7 @@ pd.DataFrame({'Accuracy' :accuracy_score(all_label, all_preds),
               'Precision' :precision_score(all_label, all_preds, average='weighted'), 
               'Recall':recall_score(all_label, all_preds, average='weighted'), 
               'F1 score':f1_score(all_label, all_preds, average='weighted')
-             },[0]).to_csv('classification_result.csv')
+             },[0]).to_csv('results/classification_result.csv')
 
 def report_to_df(report):
     report = [x.split(' ') for x in report.split('\n')]
@@ -118,4 +119,4 @@ df = report_to_df(classification_report(all_label, all_preds))
 df_ = pd.read_csv('label_encoding.csv',index_col=0).rename({'label':'Class Name'},axis=1) 
 df_['Class Name'] = df_['Class Name'].astype('str') 
 df = pd.merge(df,df_, how='left').drop_duplicates('Class Name').reset_index(drop=True)[['label_','Class Name','precision','recall','f1-score','support']]
-df.to_excel('classification_report.xlsx')
+df.to_excel('results/classification_report.xlsx')
