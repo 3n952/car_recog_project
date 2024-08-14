@@ -9,14 +9,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder 
 
 
-def pa_cu_dir():
-    current_file_path = os.path.abspath(__file__)
-    current_dir = os.path.dirname(current_file_path)
-    relative_parent_dir = os.path.join(current_dir, '..')
-    parent_dir = os.path.abspath(relative_parent_dir)
-    return current_dir, parent_dir
 
-current_dir, parent_dir = pa_cu_dir
+current_file_path = os.path.abspath(__file__)
+current_dir = os.path.dirname(current_file_path)
+relative_parent_dir = os.path.join(current_dir, '..')
+parent_dir = os.path.abspath(relative_parent_dir)
+
+
 
 classid = pd.read_csv('classid.csv',index_col=0)
 classid = classid[classid['class_id']!='car-02'] 
