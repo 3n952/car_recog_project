@@ -17,8 +17,8 @@ import torch.distributed as dist
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
-from apex import amp
-from apex.parallel import DistributedDataParallel as DDP
+# from apex import amp
+# from apex.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader, RandomSampler, DistributedSampler, SequentialSampler
 
 from models.modeling import VisionTransformer, CONFIGS
