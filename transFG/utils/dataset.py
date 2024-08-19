@@ -20,15 +20,24 @@ from torchvision.datasets.utils import download_url, list_dir, check_integrity, 
 
 
 class custom_dataloader():
-    def __init__(self, root, dtype=0,  data_len=None, transform=None):
+    def __init__(self, root, dtype=0,  data_len=None, transform=None, remove_unknown=False):
         self.root = root
         self.dtype = dtype
-        self.transform = transform 
-        if self.dtype ==2: 
-            self.test_x = pd.read_csv('test_x.csv')
-        else:    
-            self.train_x = pd.read_csv('train_x.csv')
-            self.val_x = pd.read_csv('val_x.csv')
+        self.transform = transform
+
+        if remove_unknown:
+            if self.dtype ==2: 
+                self.test_x = pd.read_csv('test_x_new.csv')
+            else:    
+                self.train_x = pd.read_csv('train_x_new.csv')
+                self.val_x = pd.read_csv('val_x_new.csv')
+        
+        else:
+            if self.dtype ==2: 
+                self.test_x = pd.read_csv('test_x.csv')
+            else:    
+                self.train_x = pd.read_csv('train_x.csv')
+                self.val_x = pd.read_csv('val_x.csv')
         
     def __getitem__(self, index): 
         

@@ -305,13 +305,13 @@ def main():
                         help="Name of this run. Used for monitoring.")
     parser.add_argument("--dataset", choices=["custom","CUB_200_2011", "car", "dog", "nabirds", "INat2017"], default="custom",
                         help="Which dataset.")
-    parser.add_argument('--data_root', type=str, default= r'C:\Users\QBIC\Desktop\workspace\docker\2_55_experiment\datasets') #'./datasets')
+    parser.add_argument('--data_root', type=str, default= r'./datasets') #'./datasets')
     parser.add_argument('--dtype', type= int, default=0)
     parser.add_argument("--model_type", choices=["ViT-B_16", "ViT-B_32", "ViT-L_16",
                                                  "ViT-L_32", "ViT-H_14"],
                         default="ViT-B_16",
                         help="Which variant to use.")
-    parser.add_argument("--pretrained_dir", type=str, default= r'C:\Users\QBIC\Desktop\workspace\docker\2_55_experiment\ViT-B_16.npz', #"./ViT-B_16.npz", 
+    parser.add_argument("--pretrained_dir", type=str, default= r'ViT_weights\ViT-B_16.npz', #"./ViT-B_16.npz", 
     #parser.add_argument("--pretrained_dir", type=str, default="/data/transfg/2_55_experiment/imagenet21k_ViT-B_32.npz",
                         help="Where to search for pretrained ViT models.")
     parser.add_argument("--pretrained_model", type=str, default=None,

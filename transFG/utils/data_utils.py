@@ -32,15 +32,16 @@ def get_loader(args):
                                     transforms.ToTensor(),
                                     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
         print(args.data_root)
-        trainset = custom_dataloader(root=args.data_root, dtype=0, transform = train_transform)
-        valset = custom_dataloader(root=args.data_root, dtype=1, transform = val_transform)
-        testset = custom_dataloader(root=args.data_root, dtype=2, transform = test_transform) 
+        trainset = custom_dataloader(root=args.data_root, dtype=0, transform = train_transform, remove_unknown=True)
+        valset = custom_dataloader(root=args.data_root, dtype=1, transform = val_transform, remove_unknown=True)
+        testset = custom_dataloader(root=args.data_root, dtype=2, transform = test_transform, remove_unknown=True) 
     
     else:
         print('build new get_loader function')
 
     if args.local_rank == 0:
         torch.distributed.barrier()
+        
     #RandomSampler : 데이터셋을 적절히 섞음
     train_sampler = RandomSampler(trainset) if args.local_rank == -1 else DistributedSampler(trainset) #RandomSampler : 랜덤
     test_sampler = SequentialSampler(testset) if args.local_rank == -1 else DistributedSampler(testset) #SequentialSampler : 항상 같은 순서
