@@ -18,6 +18,7 @@ from torchvision.datasets import VisionDataset
 from torchvision.datasets.folder import default_loader
 from torchvision.datasets.utils import download_url, list_dir, check_integrity, extract_archive, verify_str_arg
 
+
 class custom_dataloader():
     def __init__(self, root, dtype=0,  data_len=None, transform=None):
         self.root = root
@@ -31,54 +32,47 @@ class custom_dataloader():
         
     def __getitem__(self, index): 
         
-        if self.dtype ==0: 
+        if self.dtype ==0:
             img = cv2.imread(self.train_x['path'].iloc[index])
             
             # file명에 로마숫자 들어간 경우 이미지를 로드 못함. -> 전처리하거나 못읽는 이미지 예외처리 하기
-            # 후자의 경우, 검은 이미지를 임의로 만들고 10668이라는 라벨 부여
+            if img is not None:
+                target =  self.train_x['label'].iloc[index]
 
-            if img is None:
-                img = np.zeros((0, 0, 0), dtype=np.uint8) 
-                target =  10668
-            target =  self.train_x['label'].iloc[index]
-     
-            if len(img.shape) == 2:
-                img = np.stack([img] * 3, 2)
-            img = Image.fromarray(img, mode='RGB')
-            if self.transform is not None:
-                img = self.transform(img)
+                if len(img.shape) == 2:
+                    img = np.stack([img] * 3, 2)
+                img = Image.fromarray(img, mode = "RGB")
+                if self.transform is not None:
+                    img = self.transform(img)
 
         elif self.dtype ==1:
             img = cv2.imread(self.val_x['path'].iloc[index]) 
-            if img is None:
-                img = np.zeros((0, 0, 0), dtype=np.uint8) 
-                target =  10668
             
-            target =  self.val_x['label'].iloc[index]
-            
-            if len(img.shape) == 2:
-                img = np.stack([img] * 3, 2)
+            if img is not None:
+                target =  self.val_x['label'].iloc[index]
 
-            img = Image.fromarray(img, mode='RGB')
-            if self.transform is not None:
-                img = self.transform(img)
+                if len(img.shape) == 2:
+                    img = np.stack([img] * 3, 2)
+                img = Image.fromarray(img, mode = "RGB")
+                if self.transform is not None:
+                    img = self.transform(img)
+
 
         elif self.dtype ==2: 
             #print(self.test_x['path'].iloc[index])
             img = cv2.imread(self.test_x['path'].iloc[index])
             
             
-            if img is None:
-                img = np.zeros((0, 0, 0), dtype=np.uint8) 
-                target =  10668
+            if img is not None:
+                target =  self.test_x['label'].iloc[index]
 
-            target =  self.test_x['label'].iloc[index]
-            
-            if len(img.shape) == 2:
-                img = np.stack([img] * 3, 2)
-            img = Image.fromarray(img, mode='RGB')
-            if self.transform is not None:
-                img = self.transform(img)        
+                if len(img.shape) == 2:
+                    img = np.stack([img] * 3, 2)
+                img = Image.fromarray(img, mode = "RGB")
+                
+                if self.transform is not None:
+                    img = self.transform(img)
+        
 
         return img, target
 
