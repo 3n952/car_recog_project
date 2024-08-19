@@ -23,8 +23,9 @@ classid = classid[classid['class_id']!='car-04']
 classid = classid[classid['class_id']!='car-05']
 classid = classid[classid['class_id']!='car-06']
 classid['find'] = classid['label_'].apply(lambda x:x.split('#')[1])
-classid = classid[classid['find'] == 'Unknown']
+classid = classid[classid['find'] == 'Unknown' or classid['find'] == 'unknown' ]
 path = '../datasets/custom'
+
 for i in classid['label_']: 
     try:
         shutil.rmtree((os.path.join(path,i)))
