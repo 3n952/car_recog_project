@@ -1,7 +1,7 @@
 # car detection for fgvc
 
 
-## <div align="center">YOLOv5</div>
+<div align="center">YOLOv5</div>
 
 
 <div align="center">
