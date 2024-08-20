@@ -1,3 +1,8 @@
+# car pseudo labeling을 위한 모듈
+# class xcenter, ycenter, width, height가 txt파일로 변환됨.
+# $python pseudo_car_labeling.py --source source_dir --weights yolov5s.pt --save_txt
+
+
 # Ultralytics YOLOv5 🚀, AGPL-3.0 license
 """
 Run YOLOv5 detection inference on images, videos, directories, globs, YouTube, webcam, streams, etc.
@@ -255,7 +260,7 @@ def run(
 
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
-                    c = int(cls)  # integer class
+                    c = int(cls) -2  # integer class 차 클래스(2)에서 2를 뺀 0으로 라벨링하기 위함
                     label = names[c] if hide_conf else f"{names[c]}"
                     confidence = float(conf)
                     confidence_str = f"{confidence:.2f}"
