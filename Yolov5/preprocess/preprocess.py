@@ -95,15 +95,18 @@ class json2yololabel():
                 
                 with open(fname, 'w') as anno2:
                     for _, row in contents.iterrows():
-                        cx = round(row['x'] / width, 5)
-                        cy = round(row['y'] / height, 5)
+
+                        # center x, center y, width, height  -> normalization
+                        cx = round((row['x'] + row['width']) / 2 / width, 5)
+                        cy = round((row['y'] + row['height']) / 2 / height, 5)
+
                         cwidth = round(float(row['width']) / width, 5)
                         cheight = round(float(row['height']) / height, 5)
                         anno2.write(f'{row["label"]} {cx} {cy} {cwidth} {cheight}\n')
                 
 if __name__ == '__main__':
 
-    root_dir = 'D:\\cctv_datasets_yolo\\cm\\cm_datasets'
+    root_dir = r'.\dataset'
 
     tanno_dir = root_dir + '\\Training\\annotations'
     vanno_dir = root_dir + '\\Validation\\annotations'

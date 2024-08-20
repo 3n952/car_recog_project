@@ -1,0 +1,24 @@
+
+# '''
+# my_data 
+# ㄴtrain
+#   ㄴimages
+#   ㄴlabels
+# ㄴvalidation
+#   ㄴimages
+#   ㄴlabels
+# ㄴtest
+#   ㄴimages
+#   ㄴlabels
+# '''
+
+train: C:\Users\QBIC\Desktop\workspace\car_model_recogize\Yolov5\dataset\Training\images # train images (relative to 'path') 128 images
+val: C:\Users\QBIC\Desktop\workspace\car_model_recogize\Yolov5\dataset\Validation\images # val images (relative to 'path') 128 images
+test: # test images (optional)
+
+
+# Num of Classes
+nc: 1
+# Classes
+names:
+  0: car
