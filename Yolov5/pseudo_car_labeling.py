@@ -1,6 +1,6 @@
 # car pseudo labeling을 위한 모듈
 # class xcenter, ycenter, width, height가 txt파일로 변환됨.
-# $python pseudo_car_labeling.py --source source_dir --weights yolov5s.pt --save_txt
+# $python pseudo_car_labeling.py --source datasets\Training\images --weights weights\yolov5s.pt --name Training_pseudo --exist-ok --save_txt
 
 
 # Ultralytics YOLOv5 🚀, AGPL-3.0 license
@@ -260,7 +260,7 @@ def run(
 
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
-                    c = int(cls) -2  # integer class 차 클래스(2)에서 2를 뺀 0으로 라벨링하기 위함
+                    c = int(cls)  # integer class 
                     label = names[c] if hide_conf else f"{names[c]}"
                     confidence = float(conf)
                     confidence_str = f"{confidence:.2f}"
@@ -270,7 +270,7 @@ def run(
 
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
-                        line = (cls, *xywh, conf) if save_conf else (cls, *xywh)  # label format
+                        line = (cls-2, *xywh, conf) if save_conf else (cls-2, *xywh)  # label format 차 클래스(2)에서 2를 뺀 0으로 라벨링하기 위함
                         with open(f"{txt_path}.txt", "a") as f:
                             f.write(("%g " * len(line)).rstrip() % line + "\n")
 
@@ -370,10 +370,10 @@ def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument("--weights", nargs="+", type=str, default=ROOT / "yolov5s.pt", help="model path or triton URL")
     parser.add_argument("--source", type=str, default=ROOT / "data/images", help="file/dir/URL/glob/screen/0(webcam)")
-    parser.add_argument("--data", type=str, default=ROOT / "data/coco128.yaml", help="(optional) dataset.yaml path")
+    parser.add_argument("--data", type=str, default=ROOT / "data/cctv_justcar.yaml", help="(optional) dataset.yaml path")
     parser.add_argument("--imgsz", "--img", "--img-size", nargs="+", type=int, default=[640], help="inference size h,w")
     parser.add_argument("--conf-thres", type=float, default=0.25, help="confidence threshold")
-    parser.add_argument("--iou-thres", type=float, default=0.45, help="NMS IoU threshold")
+    parser.add_argument("--iou-thres", type=float, default=0.50, help="NMS IoU threshold")
     parser.add_argument("--max-det", type=int, default=1000, help="maximum detections per image")
     parser.add_argument("--device", default="", help="cuda device, i.e. 0 or 0,1,2,3 or cpu")
     parser.add_argument("--view-img", action="store_true", help="show results")
