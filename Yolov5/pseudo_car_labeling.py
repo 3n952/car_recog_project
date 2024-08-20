@@ -1,37 +1,9 @@
 # car pseudo labeling을 위한 모듈
 # class xcenter, ycenter, width, height가 txt파일로 변환됨.
-# $python pseudo_car_labeling.py --source datasets\Training\images --weights weights\yolov5s.pt --name Training_pseudo --exist-ok --save_txt
+# $python pseudo_car_labeling.py --source datasets\Training\images --weights weights\yolov5s.pt --name Training_pseudo --exist-ok --save-txt
 
 
 # Ultralytics YOLOv5 🚀, AGPL-3.0 license
-"""
-Run YOLOv5 detection inference on images, videos, directories, globs, YouTube, webcam, streams, etc.
-
-Usage - sources:
-    $ python detect.py --weights yolov5s.pt --source 0                               # webcam
-                                                     img.jpg                         # image
-                                                     vid.mp4                         # video
-                                                     screen                          # screenshot
-                                                     path/                           # directory
-                                                     list.txt                        # list of images
-                                                     list.streams                    # list of streams
-                                                     'path/*.jpg'                    # glob
-                                                     'https://youtu.be/LNwODJXcvt4'  # YouTube
-                                                     'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
-
-Usage - formats:
-    $ python detect.py --weights yolov5s.pt                 # PyTorch
-                                 yolov5s.torchscript        # TorchScript
-                                 yolov5s.onnx               # ONNX Runtime or OpenCV DNN with --dnn
-                                 yolov5s_openvino_model     # OpenVINO
-                                 yolov5s.engine             # TensorRT
-                                 yolov5s.mlpackage          # CoreML (macOS-only)
-                                 yolov5s_saved_model        # TensorFlow SavedModel
-                                 yolov5s.pb                 # TensorFlow GraphDef
-                                 yolov5s.tflite             # TensorFlow Lite
-                                 yolov5s_edgetpu.tflite     # TensorFlow Edge TPU
-                                 yolov5s_paddle_model       # PaddlePaddle
-"""
 
 import argparse
 import csv
@@ -324,40 +296,8 @@ def run(
 
 
 def parse_opt():
+
     """
-    Parse command-line arguments for YOLOv5 detection, allowing custom inference options and model configurations.
-
-    Args:
-        --weights (str | list[str], optional): Model path or Triton URL. Defaults to ROOT / 'yolov5s.pt'.
-        --source (str, optional): File/dir/URL/glob/screen/0(webcam). Defaults to ROOT / 'data/images'.
-        --data (str, optional): Dataset YAML path. Provides dataset configuration information.
-        --imgsz (list[int], optional): Inference size (height, width). Defaults to [640].
-        --conf-thres (float, optional): Confidence threshold. Defaults to 0.25.
-        --iou-thres (float, optional): NMS IoU threshold. Defaults to 0.45.
-        --max-det (int, optional): Maximum number of detections per image. Defaults to 1000.
-        --device (str, optional): CUDA device, i.e., '0' or '0,1,2,3' or 'cpu'. Defaults to "".
-        --view-img (bool, optional): Flag to display results. Defaults to False.
-        --save-txt (bool, optional): Flag to save results to *.txt files. Defaults to False.
-        --save-csv (bool, optional): Flag to save results in CSV format. Defaults to False.
-        --save-conf (bool, optional): Flag to save confidences in labels saved via --save-txt. Defaults to False.
-        --save-crop (bool, optional): Flag to save cropped prediction boxes. Defaults to False.
-        --nosave (bool, optional): Flag to prevent saving images/videos. Defaults to False.
-        --classes (list[int], optional): List of classes to filter results by, e.g., '--classes 0 2 3'. Defaults to None.
-        --agnostic-nms (bool, optional): Flag for class-agnostic NMS. Defaults to False.
-        --augment (bool, optional): Flag for augmented inference. Defaults to False.
-        --visualize (bool, optional): Flag for visualizing features. Defaults to False.
-        --update (bool, optional): Flag to update all models in the model directory. Defaults to False.
-        --project (str, optional): Directory to save results. Defaults to ROOT / 'runs/detect'.
-        --name (str, optional): Sub-directory name for saving results within --project. Defaults to 'exp'.
-        --exist-ok (bool, optional): Flag to allow overwriting if the project/name already exists. Defaults to False.
-        --line-thickness (int, optional): Thickness (in pixels) of bounding boxes. Defaults to 3.
-        --hide-labels (bool, optional): Flag to hide labels in the output. Defaults to False.
-        --hide-conf (bool, optional): Flag to hide confidences in the output. Defaults to False.
-        --half (bool, optional): Flag to use FP16 half-precision inference. Defaults to False.
-        --dnn (bool, optional): Flag to use OpenCV DNN for ONNX inference. Defaults to False.
-        --vid-stride (int, optional): Video frame-rate stride, determining the number of frames to skip in between
-            consecutive frames. Defaults to 1.
-
     Returns:
         argparse.Namespace: Parsed command-line arguments as an argparse.Namespace object.
 
@@ -367,12 +307,13 @@ def parse_opt():
         args = YOLOv5.parse_opt()
         ```
     """
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--weights", nargs="+", type=str, default=ROOT / "yolov5s.pt", help="model path or triton URL")
     parser.add_argument("--source", type=str, default=ROOT / "data/images", help="file/dir/URL/glob/screen/0(webcam)")
     parser.add_argument("--data", type=str, default=ROOT / "data/cctv_justcar.yaml", help="(optional) dataset.yaml path")
     parser.add_argument("--imgsz", "--img", "--img-size", nargs="+", type=int, default=[640], help="inference size h,w")
-    parser.add_argument("--conf-thres", type=float, default=0.25, help="confidence threshold")
+    parser.add_argument("--conf-thres", type=float, default=0.50, help="confidence threshold")
     parser.add_argument("--iou-thres", type=float, default=0.50, help="NMS IoU threshold")
     parser.add_argument("--max-det", type=int, default=1000, help="maximum detections per image")
     parser.add_argument("--device", default="", help="cuda device, i.e. 0 or 0,1,2,3 or cpu")
