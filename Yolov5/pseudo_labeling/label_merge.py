@@ -109,6 +109,6 @@ def label_merge(root_dir, is_train = True):
            
 
 
-root_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets'
+root_dir = r'..\dataset'
 # 파일 생성 경로: labels/pseudo_labels
 label_merge(root_dir, is_train = False)
