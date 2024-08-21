@@ -69,8 +69,6 @@ def label_merge(root_dir, is_train = True):
         # anno_label_path = 'root_dir/Training/labels/*.txt'
         anno_txt_path = os.path.join(anno_label_path, os.path.basename(pseudo_txt_path))
 
-
-
         #bbox 초기화
         og_bbox = []
         pseudo_bbox = []
@@ -79,17 +77,17 @@ def label_merge(root_dir, is_train = True):
         with open(pseudo_txt_path, 'r', encoding='utf-8') as file:
             for line in file:
                 line_split = line.split()
-                bbox = [float(line_split[1]),float(line_split[2]),float(line_split[3]),float(line_split[4])]
-                pseudo_bbox.append(bbox)
+                pbbox = [float(line_split[1]),float(line_split[2]),float(line_split[3]),float(line_split[4])]
+                pseudo_bbox.append(pbbox)
 
         with open(anno_txt_path, 'r', encoding='utf-8') as file:
             for line in file:
                 line_split = line.split()
-                bbox = [float(line_split[1]),float(line_split[2]),float(line_split[3]),float(line_split[4])]
-                og_bbox.append(bbox)
+                obbox = [float(line_split[1]),float(line_split[2]),float(line_split[3]),float(line_split[4])]
+                og_bbox.append(obbox)
 
         
-        width, height = 3840. , 2160.
+        #width, height = 3840. , 2160.
 
         # calculate iou for merge bbox 
         for p_bbox in pseudo_bbox:
@@ -99,20 +97,18 @@ def label_merge(root_dir, is_train = True):
                     if not o_bbox in merge_bbox:
                         merge_bbox.append(o_bbox)
                         break
-                elif iou == 0:
-                    if not pseudo_bbox in merge_bbox:
-                        merge_bbox.append(pseudo_bbox)
                 else:
                     if not pseudo_bbox in merge_bbox:
-                        merge_bbox.append(pseudo_bbox)
+                        merge_bbox.append(p_bbox)
         
         fname2write = os.path.join(anno_label_path, 'pseudo_labels', os.path.basename(pseudo_txt_path))
         with open(fname2write, 'w') as anno:
-            for bbox in range(merge_bbox):
+            for bbox in merge_bbox:
                 anno.write(f'0 {bbox[0]} {bbox[1]} {bbox[2]} {bbox[3]}\n')
 
            
 
 
 root_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets'
-label_merge(root_dir, is_train = True)
+# 파일 생성 경로: labels/pseudo_labels
+label_merge(root_dir, is_train = False)
