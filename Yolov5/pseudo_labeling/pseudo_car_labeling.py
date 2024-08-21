@@ -45,7 +45,7 @@ from utils.torch_utils import select_device, smart_inference_mode
 
 @smart_inference_mode()
 def run(
-    weights=ROOT / "yolov5s.pt",  # model path or triton URL
+    weights=ROOT / "weights/yolov5s.pt",  # model path or triton URL
     source=ROOT / "data/images",  # file/dir/URL/glob/screen/0(webcam)
     data=ROOT / "data/coco128.yaml",  # dataset.yaml path
     imgsz=(640, 640),  # inference size (height, width)
@@ -220,8 +220,10 @@ def run(
             if len(det):
                 # Rescale boxes from img_size to im0 size
 
-                # car만 추출이면 아래 실행 아니면 주석처리
-                det = det[det[:, -1] == 2] 
+                # car, bus, truck만 추출이면 아래 실행 아니면 주석처리
+                #det = det[det[:, -1] == 2] 
+                det = det[(det[:, -1] == 2) | (det[:, -1] == 5) | (det[:, -1] == 7)]
+
                 
                 det[:, :4] = scale_boxes(im.shape[2:], det[:, :4], im0.shape).round()
 
@@ -242,7 +244,8 @@ def run(
 
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
-                        line = (cls-2, *xywh, conf) if save_conf else (cls-2, *xywh)  # label format 차 클래스(2)에서 2를 뺀 0으로 라벨링하기 위함
+                        line = (0, *xywh, conf) if save_conf else (0, *xywh) 
+                        #line = (cls-2, *xywh, conf) if save_conf else (cls-2, *xywh)  # label format 차 클래스(2)에서 2를 뺀 0으로 라벨링하기 위함
                         with open(f"{txt_path}.txt", "a") as f:
                             f.write(("%g " * len(line)).rstrip() % line + "\n")
 
@@ -311,7 +314,7 @@ def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument("--weights", nargs="+", type=str, default=ROOT / "yolov5s.pt", help="model path or triton URL")
     parser.add_argument("--source", type=str, default=ROOT / "data/images", help="file/dir/URL/glob/screen/0(webcam)")
-    parser.add_argument("--data", type=str, default=ROOT / "data/cctv_justcar.yaml", help="(optional) dataset.yaml path")
+    parser.add_argument("--data", type=str, default=ROOT / "data/coco128.yaml", help="(optional) data/coco128.yaml path")
     parser.add_argument("--imgsz", "--img", "--img-size", nargs="+", type=int, default=[640], help="inference size h,w")
     parser.add_argument("--conf-thres", type=float, default=0.50, help="confidence threshold")
     parser.add_argument("--iou-thres", type=float, default=0.50, help="NMS IoU threshold")

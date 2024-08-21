@@ -79,17 +79,17 @@ class json2yololabel():
                     for _, row in contents.iterrows():
 
                          # center x, center y, width, height  -> normalization
-                        cx = round((row['x'] + row['width']) / 2 / width, 5)
-                        cy = round((row['y'] + row['height']) / 2 / height, 5)
+                        cx = round((row['x'] + (row['x'] + row['width'])) / 2 / width, 6)
+                        cy = round((row['y'] + (row['y'] + row['height'])) / 2 / height, 6)
 
-                        cwidth = round(float(row['width']) / width, 5)
-                        cheight = round(float(row['height']) / height, 5)
+                        cwidth = round(float(row['width']) / width, 6)
+                        cheight = round(float(row['height']) / height, 6)
                         
                         anno.write(f'{row["label"]} {cx} {cy} {cwidth} {cheight}\n')
     
     def yololabeling_justcar(self):
-        width = float(3840.)
-        height = float(2160.)
+        width = float(3840)
+        height = float(2160)
 
         for i in range(len(os.listdir(self.json_dir))):
             df = string2zero(json2df(glob(os.path.join(self.json_dir, '*.json'))[i]))
@@ -101,16 +101,16 @@ class json2yololabel():
                     for _, row in contents.iterrows():
 
                         # center x, center y, width, height  -> normalization
-                        cx = round((row['x'] + row['width']) / 2 / width, 5)
-                        cy = round((row['y'] + row['height']) / 2 / height, 5)
+                        cx = round((row['x'] + (row['x'] + row['width'])) / 2 / width, 6)
+                        cy = round((row['y'] + (row['y'] + row['height'])) / 2 / height, 6)
 
-                        cwidth = round(float(row['width']) / width, 5)
-                        cheight = round(float(row['height']) / height, 5)
+                        cwidth = round(float(row['width']) / width, 6)
+                        cheight = round(float(row['height']) / height, 6)
                         anno2.write(f'{row["label"]} {cx} {cy} {cwidth} {cheight}\n')
                 
 if __name__ == '__main__':
 
-    root_dir = r'\dataset'
+    root_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets'
 
     tanno_dir = root_dir + '\\Training\\annotations'
     vanno_dir = root_dir + '\\Validation\\annotations'
