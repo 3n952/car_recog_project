@@ -135,7 +135,7 @@ if __name__ == '__main__':
         # justcar => 첫번째줄 실행, intercar => 두번째줄 실행
         tlabeling.yololabeling_justcar()
         #tlabeling.yololabeling()
-        
+        print('complete labeling to txt format for train set')
     elif check =='v': #validation
         # label for val dataset
         vlabeling = json2yololabel(vanno_dir, vlabel_dir)
@@ -143,6 +143,7 @@ if __name__ == '__main__':
         # justcar => 첫번째줄 실행, intercar => 두번째줄 실행
         vlabeling.yololabeling_justcar()
         #vlabeling.yololabeling()
+        print('complete labeling to txt format for validation set')
 
     else:
         print('check yout input.')
