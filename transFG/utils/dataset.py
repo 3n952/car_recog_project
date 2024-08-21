@@ -42,6 +42,7 @@ class custom_dataloader():
     def __getitem__(self, index): 
         
         if self.dtype ==0:
+        
             img = cv2.imread(self.train_x['path'].iloc[index])
             
             # file명에 로마숫자 들어간 경우 이미지를 로드 못함. -> 전처리하거나 못읽는 이미지 예외처리 하기
@@ -54,7 +55,12 @@ class custom_dataloader():
                 if self.transform is not None:
                     img = self.transform(img)
 
-        elif self.dtype ==1:
+            else:
+                # 이미지 로드 실패 시 처리 (예: 예외 발생, 기본 이미지 반환 등)
+                img = Image.new("RGB", (100, 100), (0, 0, 0))  # 예시: 빈 이미지 생성
+                target = 203  # 기본값 설정 - label_encoding.csv 파일에서 마지막 라벨 하나 추가하는 역할
+
+        elif self.dtype == 1:
             img = cv2.imread(self.val_x['path'].iloc[index]) 
             
             if img is not None:
@@ -65,6 +71,10 @@ class custom_dataloader():
                 img = Image.fromarray(img, mode = "RGB")
                 if self.transform is not None:
                     img = self.transform(img)
+            else:
+                # 이미지 로드 실패 시 처리 (예: 예외 발생, 기본 이미지 반환 등)
+                img = Image.new("RGB", (100, 100), (0, 0, 0))  # 예시: 빈 이미지 생성
+                target = 203  # 기본값 (예: -1, None 등) 설정
 
 
         elif self.dtype ==2: 
@@ -81,6 +91,10 @@ class custom_dataloader():
                 
                 if self.transform is not None:
                     img = self.transform(img)
+            else:
+                # 이미지 로드 실패 시 처리 (예: 예외 발생, 기본 이미지 반환 등)
+                img = Image.new("RGB", (100, 100), (0, 0, 0))  # 예시: 빈 이미지 생성
+                target = 203  # 기본값 (예: -1, None 등) 설정
         
 
         return img, target

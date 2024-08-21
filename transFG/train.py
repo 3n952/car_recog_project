@@ -66,8 +66,6 @@ def save_model(args, model):
         checkpoint = {
             'model': model_to_save.state_dict(),
         }
-    checkpoint = {
-            'model': model_to_save.state_dict(),}
     
     torch.save(checkpoint, model_checkpoint)
     logger.warning("Saved model checkpoint to [DIR: %s]", args.output_dir)
@@ -192,15 +190,15 @@ def train(args, model):
     t_total = args.num_steps
     scheduler = WarmupCosineSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
     
-    # if args.fp16:
-    #     model, optimizer = amp.initialize(models=model,
-    #                                       optimizers=optimizer,
-    #                                       opt_level=args.fp16_opt_level)
-    #     amp._amp_state.loss_scalers[0]._loss_scale = 2**20
+    if args.fp16:
+        model, optimizer = amp.initialize(models=model,
+                                          optimizers=optimizer,
+                                          opt_level=args.fp16_opt_level)
+        amp._amp_state.loss_scalers[0]._loss_scale = 2**20
 
     # Distributed training
-    # if args.local_rank != -1:
-    #     model = DDP(model, message_size=250000000, gradient_predivide_factor=get_world_size())
+    if args.local_rank != -1:
+        model = DDP(model, message_size=250000000, gradient_predivide_factor=get_world_size())
 
     # Train!
     logger.warning("***** Running training *****")
@@ -258,8 +256,10 @@ def train(args, model):
                     torch.nn.utils.clip_grad_norm_(amp.master_params(optimizer), args.max_grad_norm)
                 else:
                     torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
-                scheduler.step()
+                
                 optimizer.step()
+                scheduler.step()
+                
                 optimizer.zero_grad()
                 global_step += 1
 
@@ -268,7 +268,7 @@ def train(args, model):
                 )
                 if args.local_rank in [-1, 0]:
                     writer.add_scalar("train/loss", scalar_value=losses.val, global_step=global_step)
-                    writer.add_scalar("train/lr", scalar_value=scheduler.get_lr()[0], global_step=global_step)
+                    writer.add_scalar("train/lr", scalar_value=scheduler.get_last_lr()[0], global_step=global_step)
                 if global_step % args.eval_every == 0:
                     with torch.no_grad():
                         accuracy = valid(args, model, writer, val_loader, global_step)
