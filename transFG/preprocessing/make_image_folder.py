@@ -64,7 +64,7 @@ def edit_coord(x):
     x[2] = x[0]+x[2]
     x[3] = x[1]+x[3]
     return x
-    
+
 #df_all['json_data_id'] = df_all['json_data_id'].apply(lambda x: x.replace('\\차종외관인식',''))
 unique_model_list = df_all.drop_duplicates(['brand_id','model_id'])[['brand_id','model_id']]
 unique_model_list.head()
