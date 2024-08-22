@@ -127,10 +127,11 @@ def label_merge(root_dir, is_train = True):
         for o_bbox in og_bbox:
             for p_bbox in pseudo_bbox:
                 iou = calculate_iou(o_bbox, p_bbox)
-                if iou >= 0.68:
-                    is_exist = True
+                if iou < 0.68:
                     if not p_bbox in merge_bbox:
                         merge_bbox.append(p_bbox)
+                else: is_exist = True
+                
             if not is_exist:
                 if not o_bbox in merge_bbox:
                     merge_bbox.append(o_bbox)
