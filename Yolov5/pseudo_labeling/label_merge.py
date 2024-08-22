@@ -135,8 +135,6 @@ def label_merge(root_dir, is_train = True):
                 anno.write(f'0 {bbox[0]} {bbox[1]} {bbox[2]} {bbox[3]}\n')
 
            
-
-
 root_dir = r'..\dataset'
 # 파일 생성 경로: labels/pseudo_labels
 label_merge(root_dir, is_train = False)
