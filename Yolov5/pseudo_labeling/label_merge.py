@@ -112,25 +112,22 @@ def label_merge(root_dir, is_train = True):
         # calculate iou for merge bbox 
         for p_bbox in pseudo_bbox:
             for o_bbox in og_bbox:
+                merge_bbox.append(o_bbox)
                 iou = calculate_iou(o_bbox, p_bbox)
-                if iou >= 0.68:
-                    if not o_bbox in merge_bbox:
-                        merge_bbox.append(o_bbox)
-                        break
-                else:
+                if iou < 0.68:
                     if not p_bbox in merge_bbox:
                         merge_bbox.append(p_bbox)
 
-        # 중복된 리스트를 제거하기 위해 set을 사용
-        final_bbox = []
-        seen = set()
+        # # 중복된 리스트를 제거하기 위해 set 사용
+        # final_bbox = []
+        # seen = set()
     
-        for lst in merge_bbox:
-            # 리스트를 튜플로 변환하여 set에 추가할 수 있게 만듦
-            lst_tuple = tuple(lst)
-            if lst_tuple not in seen:
-                seen.add(lst_tuple)
-                final_bbox.append(lst)
+        # for lst in merge_bbox:
+        #     # 리스트를 튜플로 변환하여 set에 추가
+        #     lst_tuple = tuple(lst)
+        #     if lst_tuple not in seen:
+        #         seen.add(lst_tuple)
+        #         final_bbox.append(lst)
         
         fname2write = os.path.join(anno_label_path, 'merge_labels', os.path.basename(pseudo_txt_path))
         with open(fname2write, 'w') as anno:
