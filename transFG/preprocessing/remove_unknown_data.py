@@ -19,32 +19,19 @@ def csv_filter(og_csv, new_csv):
 
     # 'unknown'이 포함된 행을 삭제
     df = df[~df[column_name].str.contains('unknown', case=False, na=False)]
-    df = df[~df[column_name].str.contains('(unknown)', case=False, na=False)]
-            
-    # 정수형 label링 올림차순
-    # df_sorted = df.sort_values(by='label', ascending=True)
-
-    # 삭제 시 불연속적인 정수 값을 채우기
-    # previous_value = -1
-
-    # for i in range(len(df_sorted)):
-    #     current_value = df_sorted.iloc[i]['label']
-    #     if current_value != previous_value + 1:
-    #         df_sorted.at[df_sorted.index[i], 'label'] = previous_value + 1
-    #     previous_value = df_sorted.iloc[i]['label']
+    df = df[~df[column_name].str.contains(r'\(unknown\)', case=False, na=False)]
 
     # 변경된 DataFrame을 다시 CSV 파일로 저장 (필요시)
-    df.to_csv(new_csv, index=False)
+    df.to_csv(new_csv, index=False) 
 
 def img_filter(dataset_dir):
     
-    for dir in glob(os.path.join(dataset_dir, '*unknown')):
+    for dir in glob(os.path.join(dataset_dir, '*unknown*')):
         try:
             shutil.rmtree(dir)
         except: 
             pass
 
-    
 
 if __name__ == "__main__":
 
