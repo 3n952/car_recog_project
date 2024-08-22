@@ -83,6 +83,18 @@ def label_merge(root_dir, is_train = True):
 
     label_path = glob(os.path.join(pseudo_label_path, '*.txt'))
 
+    if is_train:
+        mkdir_label = os.path.join(root_dir, "Training")
+    else:
+        mkdir_label = os.path.join(root_dir, "Validation")
+        
+    
+    try:
+        os.mkdir(os.path.join(mkdir_label, 'merge_labels'))
+        print('make directory')
+    except:
+        print('already exist')
+
     # pseudo_txt_path = 'root_dir/Training_pseudo/labels/*.txt'
     for pseudo_txt_path in label_path:
 
@@ -110,13 +122,18 @@ def label_merge(root_dir, is_train = True):
         #width, height = 3840. , 2160.
 
         # calculate iou for merge bbox 
-        for p_bbox in pseudo_bbox:
-            for o_bbox in og_bbox:
-                merge_bbox.append(o_bbox)
+        is_exist = False
+
+        for o_bbox in og_bbox:
+            for p_bbox in pseudo_bbox:
                 iou = calculate_iou(o_bbox, p_bbox)
-                if iou < 0.68:
+                if iou >= 0.68:
+                    is_exist = True
                     if not p_bbox in merge_bbox:
                         merge_bbox.append(p_bbox)
+            if not is_exist:
+                if not o_bbox in merge_bbox:
+                    merge_bbox.append(o_bbox)
 
         # # 중복된 리스트를 제거하기 위해 set 사용
         # final_bbox = []
@@ -129,12 +146,12 @@ def label_merge(root_dir, is_train = True):
         #         seen.add(lst_tuple)
         #         final_bbox.append(lst)
         
-        fname2write = os.path.join(anno_label_path, 'merge_labels', os.path.basename(pseudo_txt_path))
+        fname2write = os.path.join(mkdir_label, 'merge_labels', os.path.basename(pseudo_txt_path))
         with open(fname2write, 'w') as anno:
             for bbox in merge_bbox:
                 anno.write(f'0 {bbox[0]} {bbox[1]} {bbox[2]} {bbox[3]}\n')
 
            
 root_dir = r'..\dataset'
-# 파일 생성 경로: labels/pseudo_labels
+# 파일 생성 경로: Training/merge_labels
 label_merge(root_dir, is_train = False)

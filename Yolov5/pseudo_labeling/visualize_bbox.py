@@ -11,7 +11,6 @@ def visualize_original_pseudo(root_dir, is_train=True):
 
     # 랜덤한 이미지에 대한 원래의 bbox, pseudo bbox 시각화
 
-
     if is_train:
         json_path = sorted(glob(os.path.join(root_dir, 'Training', 'annotations','*.json')))
         # pseudo_path = sorted(glob(os.path.join(root_dir, 'Training_pseudo', 'labels', '*.txt')))
