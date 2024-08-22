@@ -131,7 +131,7 @@ def label_merge(root_dir, is_train = True):
         
         fname2write = os.path.join(anno_label_path, 'merge_labels', os.path.basename(pseudo_txt_path))
         with open(fname2write, 'w') as anno:
-            for bbox in final_bbox:
+            for bbox in merge_bbox:
                 anno.write(f'0 {bbox[0]} {bbox[1]} {bbox[2]} {bbox[3]}\n')
 
            
