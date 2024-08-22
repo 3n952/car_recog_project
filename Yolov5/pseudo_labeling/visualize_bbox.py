@@ -132,6 +132,7 @@ def visualize_label(img_dir, label_dir):
 
         fname = os.path.basename(label_path[idx][:-4]) + '.jpg'
         image_path = os.path.join(img_dir, fname)
+        print(image_path)
 
         # cv2 이미지 불러오기 
         image = cv2.imread(image_path)

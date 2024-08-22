@@ -12,9 +12,12 @@
 #   ㄴlabels
 # '''
 
-train: C:\Users\QBIC\Desktop\workspace\car_model_recogize\Yolov5\dataset\Training\images # train images (relative to 'path') 128 images
-val: C:\Users\QBIC\Desktop\workspace\car_model_recogize\Yolov5\dataset\Validation\images # val images (relative to 'path') 128 images
-test: # test images (optional)
+# train: C:\Users\QBIC\Desktop\workspace\car_model_recogize\Yolov5\dataset\Training\images # train images (relative to 'path') 128 images
+# val: C:\Users\QBIC\Desktop\workspace\car_model_recogize\Yolov5\dataset\Validation\images # val images (relative to 'path') 128 images
+# test: # test images (optional)
+
+train: D:\cctv_datasets_yolo\cm\cm_datasets\Training\images
+val: D:\cctv_datasets_yolo\cm\cm_datasets\Validation\images
 
 
 # Num of Classes

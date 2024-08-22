@@ -5,10 +5,30 @@ from glob import glob
 import os
 import ast
 
+def denormalize_bbox(bbox):
+
+    image_width, image_height = float(3840), float(2160)
+    x_center, y_center, width, height = bbox
+
+    x_center_pixel = x_center * image_width
+    y_center_pixel = y_center * image_height
+    width_pixel = width * image_width
+    height_pixel = height * image_height
+
+    bbox = [x_center_pixel, y_center_pixel, width_pixel, height_pixel]
+
+    return bbox
 
 # box 1은 annotation data, box 2는 Pseudo label
 def calculate_iou(box1, box2):
+   
+    # width = float(3840)
+    # height = float(2160)
+
     # 바운딩 박스는 (x_center, y_center, width, height) 형식.
+    box1 = denormalize_bbox(box1)
+    box2 = denormalize_bbox(box2)
+
     x_center1, y_center1, width1, height1 = box1
     x_center2, y_center2, width2, height2 = box2
 
@@ -93,17 +113,28 @@ def label_merge(root_dir, is_train = True):
         for p_bbox in pseudo_bbox:
             for o_bbox in og_bbox:
                 iou = calculate_iou(o_bbox, p_bbox)
-                if iou >= 0.8:
+                if iou >= 0.68:
                     if not o_bbox in merge_bbox:
                         merge_bbox.append(o_bbox)
                         break
                 else:
                     if not pseudo_bbox in merge_bbox:
                         merge_bbox.append(p_bbox)
+
+        # 중복된 리스트를 제거하기 위해 set을 사용
+        final_bbox = []
+        seen = set()
+    
+        for lst in merge_bbox:
+            # 리스트를 튜플로 변환하여 set에 추가할 수 있게 만듦
+            lst_tuple = tuple(lst)
+            if lst_tuple not in seen:
+                seen.add(lst_tuple)
+                final_bbox.append(lst)
         
         fname2write = os.path.join(anno_label_path, 'merge_labels', os.path.basename(pseudo_txt_path))
         with open(fname2write, 'w') as anno:
-            for bbox in merge_bbox:
+            for bbox in final_bbox:
                 anno.write(f'0 {bbox[0]} {bbox[1]} {bbox[2]} {bbox[3]}\n')
 
            
