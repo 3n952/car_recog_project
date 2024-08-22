@@ -131,7 +131,7 @@ def label_merge(root_dir, is_train = True):
                     if not p_bbox in merge_bbox:
                         merge_bbox.append(p_bbox)
                 else: is_exist = True
-                
+
             if not is_exist:
                 if not o_bbox in merge_bbox:
                     merge_bbox.append(o_bbox)
@@ -153,6 +153,6 @@ def label_merge(root_dir, is_train = True):
                 anno.write(f'0 {bbox[0]} {bbox[1]} {bbox[2]} {bbox[3]}\n')
 
            
-root_dir = r'..\dataset'
+root_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets'
 # 파일 생성 경로: Training/merge_labels
-label_merge(root_dir, is_train = False)
+label_merge(root_dir, is_train = True)
