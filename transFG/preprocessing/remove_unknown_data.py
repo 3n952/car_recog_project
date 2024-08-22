@@ -19,6 +19,7 @@ def csv_filter(og_csv, new_csv):
 
     # 'unknown'이 포함된 행을 삭제
     df = df[~df[column_name].str.contains('unknown', case=False, na=False)]
+    df = df[~df[column_name].str.contains('(unknown)', case=False, na=False)]
             
     # 정수형 label링 올림차순
     # df_sorted = df.sort_values(by='label', ascending=True)
