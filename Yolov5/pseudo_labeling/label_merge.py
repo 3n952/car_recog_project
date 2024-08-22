@@ -118,7 +118,7 @@ def label_merge(root_dir, is_train = True):
                         merge_bbox.append(o_bbox)
                         break
                 else:
-                    if not pseudo_bbox in merge_bbox:
+                    if not p_bbox in merge_bbox:
                         merge_bbox.append(p_bbox)
 
         # 중복된 리스트를 제거하기 위해 set을 사용
