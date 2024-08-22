@@ -24,9 +24,9 @@ from torch.utils.data import DataLoader, RandomSampler, DistributedSampler, Sequ
 from models.modeling import VisionTransformer, CONFIGS
 from utils.scheduler import WarmupLinearSchedule, WarmupCosineSchedule
 from utils.data_utils import get_loader
-from utils.dist_util import get_world_size
+from utils.dist_utils import get_world_size
 
-from utils.dataset import custom
+from utils.dataset import custom_dataloader
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -43,7 +43,7 @@ test_transform=transforms.Compose([transforms.Resize((600, 600), Image.BILINEAR)
                             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
 # test set 구성
-testset = custom(root='datasets/custom', dtype=2, transform = test_transform) 
+testset = custom_dataloader(root='datasets/custom', dtype=2, transform = test_transform) 
 
 test_sampler = SequentialSampler(testset)#if args.local_rank == -1 else DistributedSampler(testset) #SequentialSampler : 항상 같은 순서
 test_loader = DataLoader(testset,
