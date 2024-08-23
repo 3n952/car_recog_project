@@ -28,3 +28,8 @@ def format_step(step):
     if len(step) > 2:
         s += "Validation Iteration: {} ".format(step[2])
     return s
+
+import multiprocessing
+
+if __name__ == "___main__":
+    multiprocessing.freeze_support()

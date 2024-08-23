@@ -109,3 +109,7 @@ class custom_dataloader():
 
 
 
+import multiprocessing
+
+if __name__ == "___main__":
+    multiprocessing.freeze_support()

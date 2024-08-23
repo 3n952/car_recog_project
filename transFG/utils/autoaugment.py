@@ -202,3 +202,8 @@ class SubPolicy(object):
         if random.random() < self.p2:
             img = self.operation2(img, self.magnitude2)
         return img
+    
+import multiprocessing
+
+if __name__ == "___main__":
+    multiprocessing.freeze_support()

@@ -61,3 +61,9 @@ class WarmupCosineSchedule(LambdaLR):
         # progress after warmup
         progress = float(step - self.warmup_steps) / float(max(1, self.t_total - self.warmup_steps))
         return max(0.0, 0.5 * (1. + math.cos(math.pi * float(self.cycles) * 2.0 * progress)))
+
+import multiprocessing
+
+if __name__ == "___main__":
+    multiprocessing.freeze_support()
+    

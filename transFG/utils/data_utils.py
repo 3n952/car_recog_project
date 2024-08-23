@@ -63,3 +63,8 @@ def get_loader(args):
                              pin_memory=True) if testset is not None else None
 
     return train_loader, val_loader, test_loader
+
+import multiprocessing
+
+if __name__ == "___main__":
+    multiprocessing.freeze_support()
