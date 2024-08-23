@@ -73,3 +73,8 @@ def get_h14_config():
     config.classifier = 'token'
     config.representation_size = None
     return config
+
+import multiprocessing
+
+if __name__ == "___main__":
+    multiprocessing.freeze_support()

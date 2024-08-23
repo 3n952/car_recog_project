@@ -18,6 +18,7 @@ from torch.nn import CrossEntropyLoss, Dropout, Softmax, Linear, Conv2d, LayerNo
 from torch.nn.modules.utils import _pair
 from scipy import ndimage
 
+import sys
 import models.configs as configs
 
 logger = logging.getLogger(__name__)
@@ -374,6 +375,7 @@ def con_loss(features, labels):
     loss /= (B * B)
     return loss
 
+
 CONFIGS = {
     'ViT-B_16': configs.get_b16_config(),
     'ViT-B_32': configs.get_b32_config(),
@@ -381,4 +383,4 @@ CONFIGS = {
     'ViT-L_32': configs.get_l32_config(),
     'ViT-H_14': configs.get_h14_config(),
     'testing': configs.get_testing(),
-}
+} 
