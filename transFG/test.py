@@ -1,5 +1,6 @@
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, classification_report
 
+import multiprocessing
 import logging
 import argparse
 import os 
@@ -10,6 +11,9 @@ import numpy as np
 import time
 from PIL import Image
 from datetime import timedelta
+
+import sys
+sys.path.append('../')
 from models.modeling import VisionTransformer, CONFIGS
 import torch
 import torch.distributed as dist
@@ -21,11 +25,9 @@ from torchvision import transforms
 # from apex.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader, RandomSampler, DistributedSampler, SequentialSampler
 
-from models.modeling import VisionTransformer, CONFIGS
 from utils.scheduler import WarmupLinearSchedule, WarmupCosineSchedule
 from utils.data_utils import get_loader
 from utils.dist_utils import get_world_size
-
 from utils.dataset import custom_dataloader
 import warnings
 warnings.filterwarnings('ignore')
@@ -54,13 +56,13 @@ test_loader = DataLoader(testset,
 
 img_size = 448
 smoothing_value = 0.0
-pretrained_model = "output/sample_run_checkpoint.bin"
+pretrained_model = "output/test_checkpoint.bin"
 config = CONFIGS["ViT-B_16"]
 config.split = 'overlap'
 config.slide_step = 12
 num_classes = pd.read_csv('label_encoding.csv')['label'].nunique()
 print(num_classes,'num_classes')
-model = VisionTransformer(config, img_size, num_classes, smoothing_value, zero_head=True) 
+model = VisionTransformer(config, img_size, 436, smoothing_value, zero_head=True) 
 
 if pretrained_model is not None:
     pretrained_model = torch.load(pretrained_model, map_location=torch.device('cpu'))['model']
@@ -115,8 +117,11 @@ def report_to_df(report):
     df = pd.DataFrame(data = values, columns = header)
     return df
 
-df = report_to_df(classification_report(all_label, all_preds))
-df_ = pd.read_csv('label_encoding.csv',index_col=0).rename({'label':'Class Name'},axis=1) 
-df_['Class Name'] = df_['Class Name'].astype('str') 
-df = pd.merge(df,df_, how='left').drop_duplicates('Class Name').reset_index(drop=True)[['label_','Class Name','precision','recall','f1-score','support']]
-df.to_excel('results/classification_report.xlsx')
+if __name__ == "___main__":
+    multiprocessing.freeze_support()
+    df = report_to_df(classification_report(all_label, all_preds))
+    df_ = pd.read_csv('label_encoding.csv',index_col=0).rename({'label':'Class Name'},axis=1) 
+    df_['Class Name'] = df_['Class Name'].astype('str') 
+    df = pd.merge(df,df_, how='left').drop_duplicates('Class Name').reset_index(drop=True)[['label_','Class Name','precision','recall','f1-score','support']]
+    df.to_excel('results/classification_report.xlsx')
+
