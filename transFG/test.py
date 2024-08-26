@@ -60,7 +60,7 @@ pretrained_model = "output/test_checkpoint.bin"
 config = CONFIGS["ViT-B_16"]
 config.split = 'overlap'
 config.slide_step = 12
-num_classes = pd.read_csv('label_encoding.csv')['label'].nunique()
+num_classes = pd.read_csv('custom_label_encoding.csv')['label'].nunique()
 print(num_classes,'num_classes')
 model = VisionTransformer(config, img_size, 436, smoothing_value, zero_head=True) 
 
