@@ -92,8 +92,7 @@ class custom_dataloader():
                     img = np.stack([img] * 3, 2)
                 img = Image.fromarray(img, mode = "RGB")
                 
-                if self.transform is not None:
-                    img = self.transform(img)
+
             else:
                 # 이미지 로드 실패 시 처리 (예: 예외 발생, 기본 이미지 반환 등)
                 img = Image.new("RGB", (100, 100), (0, 0, 0))  # 예시: 빈 이미지 생성
