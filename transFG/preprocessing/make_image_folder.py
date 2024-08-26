@@ -11,7 +11,9 @@ from PIL import Image
 import argparse
 import ast
 import json
-from IPython.display import display
+
+from IPython.display import display 
+
 
 current_file_path = os.path.abspath(__file__)
 current_dir = os.path.dirname(current_file_path)
