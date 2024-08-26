@@ -51,7 +51,7 @@ test_sampler = SequentialSampler(testset)#if args.local_rank == -1 else Distribu
 test_loader = DataLoader(testset,
                              sampler=test_sampler,
                              batch_size=batch_size,
-                             num_workers=4,
+                             num_workers=0,
                              pin_memory=True) if testset is not None else None 
 
 img_size = 448

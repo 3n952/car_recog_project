@@ -52,13 +52,14 @@ class custom_dataloader():
                 if len(img.shape) == 2:
                     img = np.stack([img] * 3, 2)
                 img = Image.fromarray(img, mode = "RGB")
-                if self.transform is not None:
-                    img = self.transform(img)
 
             else:
                 # 이미지 로드 실패 시 처리 (예: 예외 발생, 기본 이미지 반환 등)
                 img = Image.new("RGB", (100, 100), (0, 0, 0))  # 예시: 빈 이미지 생성
-                target = 203  # 기본값 설정 - label_encoding.csv 파일에서 마지막 라벨 하나 추가하는 역할
+                target = None  # 기본값 설정 - label_encoding.csv 파일에서 마지막 라벨 하나 추가하는 역할
+            
+            if self.transform is not None:
+                    img = self.transform(img)
 
         elif self.dtype == 1:
             img = cv2.imread(self.val_x['path'].iloc[index]) 
@@ -69,12 +70,14 @@ class custom_dataloader():
                 if len(img.shape) == 2:
                     img = np.stack([img] * 3, 2)
                 img = Image.fromarray(img, mode = "RGB")
-                if self.transform is not None:
-                    img = self.transform(img)
+        
             else:
                 # 이미지 로드 실패 시 처리 (예: 예외 발생, 기본 이미지 반환 등)
                 img = Image.new("RGB", (100, 100), (0, 0, 0))  # 예시: 빈 이미지 생성
-                target = 203  # 기본값 (예: -1, None 등) 설정
+                target = None  # 기본값 (예: -1, None 등) 설정
+            
+            if self.transform is not None:
+                    img = self.transform(img)
 
 
         elif self.dtype ==2: 
@@ -94,7 +97,10 @@ class custom_dataloader():
             else:
                 # 이미지 로드 실패 시 처리 (예: 예외 발생, 기본 이미지 반환 등)
                 img = Image.new("RGB", (100, 100), (0, 0, 0))  # 예시: 빈 이미지 생성
-                target = 203  # 기본값 (예: -1, None 등) 설정
+                target = None  # 기본값 (예: -1, None 등) 설정
+
+            if self.transform is not None:
+                    img = self.transform(img)
         
 
         return img, target
@@ -107,9 +113,3 @@ class custom_dataloader():
         elif self.dtype == 2:
             return len(self.test_x) 
 
-
-
-import multiprocessing
-
-if __name__ == "___main__":
-    multiprocessing.freeze_support()
