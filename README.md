@@ -15,14 +15,14 @@
 초록 bbox annotation이 원래의 bbox annotation  
 빨강 bbox annotation이 pseudo label 적용한 bbox annotation
 
-![alt text](assets\image.png)
+![alt text](assets/image.png)
 
 ### image crop
-![alt text](assets\C-220721_15_CR12_03_A0993.jpg)
-![alt text](assets\C-220806_14_CR13_05_A2253.jpg)
+![alt text](assets/C-220721_15_CR12_03_A0993.jpg)
+![alt text](assets/C-220806_14_CR13_05_A2253.jpg)
 
 ### Results
 
-![alt text](assets\transfg결과1.PNG)
-![alt text](assets\transfg결과2.PNG)
-![alt text](assets\transfg결과3.PNG)
+![alt text](assets/transfg결과1.PNG)
+![alt text](assets/transfg결과2.PNG)
+![alt text](assets/transfg결과3.PNG)
