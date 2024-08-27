@@ -9,7 +9,7 @@
 
 
 ### 원본 이미지   
-![alt text](assets\C-220805_04_CR02_01_A0075.jpg)   
+![alt text](assets/C-220805_04_CR02_01_A0075.jpg)   
 
 ### pseudo label 적용 이미지 & annotation
 초록 bbox annotation이 원래의 bbox annotation  
