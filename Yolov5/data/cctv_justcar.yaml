@@ -16,8 +16,9 @@
 # val: C:\Users\QBIC\Desktop\workspace\car_model_recogize\Yolov5\dataset\Validation\images # val images (relative to 'path') 128 images
 # test: # test images (optional)
 
-train: D:\cctv_datasets_yolo\cm\cm_datasets\Training\images
-val: D:\cctv_datasets_yolo\cm\cm_datasets\Validation\images
+train: C:\Users\QBIC\Desktop\workspace\car_recog_project\Yolov5\dataset\Training\images
+val: C:\Users\QBIC\Desktop\workspace\car_recog_project\Yolov5\dataset\Validation\images
+#test: C:\Users\QBIC\Desktop\workspace\car_recog_project\Yolov5\dataset\Test\images
 
 
 # Num of Classes

@@ -17,8 +17,6 @@ val: D:\cctv_datasets\cm\cm_datasets\Validation\images # val images (relative to
 test: # test images (optional)
 
 
-
-
 # Num of Classes
 nc: 379
 # Classes

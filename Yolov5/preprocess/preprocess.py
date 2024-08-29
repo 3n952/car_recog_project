@@ -110,17 +110,20 @@ class json2yololabel():
                 
 if __name__ == '__main__':
 
-    root_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets'
+    root_dir = r'C:\Users\QBIC\Desktop'
 
     tanno_dir = root_dir + '\\Training\\annotations'
     vanno_dir = root_dir + '\\Validation\\annotations'
+    test_anno_dir = root_dir + '\\Test\\annotations'
 
     tlabel_dir = root_dir + '\\Training\\labels'
     vlabel_dir = root_dir + '\\Validation\\labels'
+    test_label_dir = root_dir + '\\Test\\labels'
 
     try:
         os.makedirs(tlabel_dir, exist_ok=False)
         os.makedirs(vlabel_dir, exist_ok=False)
+        os.makedirs(test_label_dir, exist_ok=False)
         print('mkdir success')
     except FileExistsError:
         print('already exist(label directory)')
@@ -144,6 +147,14 @@ if __name__ == '__main__':
         vlabeling.yololabeling_justcar()
         #vlabeling.yololabeling()
         print('complete labeling to txt format for validation set')
+    
+    elif check =="test":
+        testlabeling = json2yololabel(test_anno_dir, test_label_dir)
+
+        # justcar => 첫번째줄 실행, intercar => 두번째줄 실행
+        testlabeling.yololabeling_justcar()
+        #tlabeling.yololabeling()
+        print('complete labeling to txt format for test set')
 
     else:
         print('check yout input.')
