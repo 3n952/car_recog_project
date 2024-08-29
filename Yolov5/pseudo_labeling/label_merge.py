@@ -69,24 +69,29 @@ def calculate_iou(box1, box2):
 
     return iou
 
-def label_merge(root_dir, is_train = True):
+def label_merge(root_dir, is_train = 0):
 
-    if is_train:
+    if is_train == 0:
         # txt format
         pseudo_label_path =  os.path.join(root_dir, 'Training_pseudo', 'labels')
         anno_label_path = os.path.join(root_dir, 'Training', 'labels')
 
-    else:
+    elif is_train == 1:
         pseudo_label_path =  os.path.join(root_dir, 'Validation_pseudo', 'labels')
         anno_label_path = os.path.join(root_dir, 'Validation', 'labels')
     
+    else:
+        pseudo_label_path =  os.path.join(root_dir, 'Test_pseudo', 'labels')
+        anno_label_path = os.path.join(root_dir, 'Test', 'labels')
 
     label_path = glob(os.path.join(pseudo_label_path, '*.txt'))
 
-    if is_train:
+    if is_train == 0:
         mkdir_label = os.path.join(root_dir, "Training")
-    else:
+    elif is_train ==1:
         mkdir_label = os.path.join(root_dir, "Validation")
+    else:
+        mkdir_label = os.path.join(root_dir, "Test")
         
     
     try:
@@ -153,6 +158,10 @@ def label_merge(root_dir, is_train = True):
                 anno.write(f'0 {bbox[0]} {bbox[1]} {bbox[2]} {bbox[3]}\n')
 
            
-root_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets'
+# root_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets'
+root_dir = r'C:\Users\QBIC\Desktop\Test'
+
+
+
 # 파일 생성 경로: Training/merge_labels
-label_merge(root_dir, is_train = True)
+label_merge(root_dir, is_train = 2)

@@ -164,9 +164,9 @@ def visualize_label(img_dir, label_dir):
 
         plt.show()
 
-root_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets'
-img_dir = r'D:\cctv_datasets_yolo\cm\cm_datasets\Training\images'
-label_dir = r"D:\cctv_datasets_yolo\cm\cm_datasets\Training\labels"
+root_dir = r'D:\task1\yolo\datasets\cm\cm_datasets'
+img_dir = r'D:\task1\yolo\datasets\cm\cm_datasets\Training\images'
+label_dir = r"D:\task1\yolo\datasets\cm\cm_datasets\Training\labels"
 
 # 원래의 bbox 라벨링과 pseudo 라벨링을 동시에 시각화 할 때
 #visualize_original_pseudo(root_dir=root_dir)

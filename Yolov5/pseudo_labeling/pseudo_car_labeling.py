@@ -22,6 +22,7 @@ ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
 from ultralytics.utils.plotting import Annotator, colors, save_one_box
 
+sys.path.append('..')
 from models.common import DetectMultiBackend
 from utils.dataloaders import IMG_FORMATS, VID_FORMATS, LoadImages, LoadScreenshots, LoadStreams
 from utils.general import (
@@ -220,8 +221,10 @@ def run(
             if len(det):
                 # Rescale boxes from img_size to im0 size
 
-                # car, bus, truck만 추출이면 아래 실행 아니면 주석처리
-                #det = det[det[:, -1] == 2] 
+                # car만 추출이면 아래 실행
+                # det = det[det[:, -1] == 2] 
+
+                # car, bus, truck만 추출이면 아래 실행 
                 det = det[(det[:, -1] == 2) | (det[:, -1] == 5) | (det[:, -1] == 7)]
 
                 
