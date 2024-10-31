@@ -1,97 +1,118 @@
-,path,label_,label
-154,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_ig(2016)\C-221015_16_CR06_01_A0883.jpg,hyundai#grandeur_ig(2016),7
-227,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#ioniq_5(2021)\C-221016_08_CR06_01_A5330.jpg,hyundai#ioniq_5(2021),10
-106,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#genesis_g80(2016)\C-221016_08_CR06_01_A5449.jpg,hyundai#genesis_g80(2016),5
-124,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-221015_16_CR06_01_A1130.jpg,hyundai#grandeur_hg(2013),6
-701,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#k7_all new(2016)\C-221016_08_CR06_01_A5288.jpg,kia#k7_all new(2016),31
-480,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_nf(2004)\C-221016_08_CR06_01_A5310.jpg,hyundai#sonata_nf(2004),19
-781,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sorento_4th(2020)\C-221015_08_CR06_01_A5434.jpg,kia#sorento_4th(2020),37
-558,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#bongo_bongo Ⅲ(unknown)\C-221015_14_CR06_01_A1081.jpg,kia#bongo_bongo Ⅲ(unknown),23
-791,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sorento_4th(2020)\C-221015_17_CR06_01_A0678.jpg,kia#sorento_4th(2020),37
-913,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\renault samsung#sm5_new(2005)\C-221015_18_CR06_01_A0167.jpg,renault samsung#sm5_new(2005),42
-26,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#avante_ad(2015)\C-221015_16_CR06_01_A1043.jpg,hyundai#avante_ad(2015),1
-357,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#santafe_dm(2012)\C-221016_08_CR06_01_A5476.jpg,hyundai#santafe_dm(2012),14
-955,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\ssangyong#tivoli_tivoli(2015)\C-221016_08_CR06_01_A5335.jpg,ssangyong#tivoli_tivoli(2015),45
-417,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_lf(2014)\C-221016_08_CR06_01_A5456.jpg,hyundai#sonata_lf(2014),17
-0,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\chevrolet(gm daewoo)#spark_spark(2011)\C-221015_12_CR06_01_A0119.jpg,chevrolet(gm daewoo)#spark_spark(2011),0
-467,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_nf(2004)\C-221015_08_CR06_01_A5434.jpg,hyundai#sonata_nf(2004),19
-931,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\renault samsung#sm6_sm6(2016)\C-221016_08_CR06_01_A0568.jpg,renault samsung#sm6_sm6(2016),43
-376,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#santafe_tm(2018)\C-221016_08_CR06_01_A5438.jpg,hyundai#santafe_tm(2018),15
-877,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sportage_r(2010)\C-221015_15_CR06_01_A0187.jpg,kia#sportage_r(2010),40
-653,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#k5_2th(2015)\C-221015_13_CR06_01_A0953.jpg,kia#k5_2th(2015),29
-359,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#santafe_dm(2012)\C-221016_12_CR06_01_A0347.jpg,hyundai#santafe_dm(2012),14
-914,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\renault samsung#sm5_new(2005)\C-221016_07_CR06_01_A0101.jpg,renault samsung#sm5_new(2005),42
-50,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#avante_md(2010)\C-221016_08_CR06_01_A0172.jpg,hyundai#avante_md(2010),2
-560,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#bongo_bongo Ⅲ(unknown)\C-221015_15_CR06_01_A0457.jpg,kia#bongo_bongo Ⅲ(unknown),23
-250,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#palisade_palisade(2018)\C-221015_16_CR06_01_A1130.jpg,hyundai#palisade_palisade(2018),11
-551,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#bongo_bongo Ⅲ(unknown)\C-221015_13_CR06_01_A0556.jpg,kia#bongo_bongo Ⅲ(unknown),23
-457,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_new rise(2017)\C-221016_08_CR06_01_A5333.jpg,hyundai#sonata_new rise(2017),18
-730,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#morning_all new(2011)\C-221016_07_CR06_01_A0570.jpg,kia#morning_all new(2011),33
-661,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#k5_2th(2015)\C-221015_18_CR06_01_A0023.jpg,kia#k5_2th(2015),29
-750,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#morning_urban(2020)\C-221016_08_CR06_01_A5466.jpg,kia#morning_urban(2020),34
-640,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#carnival_the new(2018)\C-221015_12_CR06_01_A5245.jpg,kia#carnival_the new(2018),28
-19,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#avante_ad(2015)\C-221015_12_CR06_01_A0953.jpg,hyundai#avante_ad(2015),1
-74,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#avante_the new ad(2018)\C-221016_08_CR06_01_A1117.jpg,hyundai#avante_the new ad(2018),3
-684,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#k5_k5(2010)\C-221016_07_CR06_01_A1197.jpg,kia#k5_k5(2010),30
-328,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#santafe_dm(2012)\C-221015_12_CR06_01_A0414.jpg,hyundai#santafe_dm(2012),14
-523,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#starex_grand(2007)\C-221016_08_CR06_01_A5472.jpg,hyundai#starex_grand(2007),21
-885,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sportage_r(2010)\C-221016_08_CR06_01_A0857.jpg,kia#sportage_r(2010),40
-40,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#avante_md(2010)\C-221015_13_CR06_01_A0347.jpg,hyundai#avante_md(2010),2
-753,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#niro_niro(2016)\C-221015_12_CR06_01_A0043.jpg,kia#niro_niro(2016),35
-833,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sorento_the new(2017)\C-221015_16_CR06_01_A1134.jpg,kia#sorento_the new(2017),38
-143,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_ig(2016)\C-221015_12_CR06_01_A0352.jpg,hyundai#grandeur_ig(2016),7
-903,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\renault samsung#qm6_qm6(2016)\C-221016_08_CR06_01_A5479.jpg,renault samsung#qm6_qm6(2016),41
-165,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_ig(2016)\C-221016_08_CR06_01_A5283.jpg,hyundai#grandeur_ig(2016),7
-579,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#carens_new(2006)\C-221015_16_CR06_01_A0642.jpg,kia#carens_new(2006),24
-244,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#palisade_palisade(2018)\C-221015_12_CR06_01_A5266.jpg,hyundai#palisade_palisade(2018),11
-299,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#porter_2(hr)(unknown)\C-221016_08_CR06_01_A5275.jpg,hyundai#porter_2(hr)(unknown),12
-414,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_lf(2014)\C-221016_08_CR06_01_A5311.jpg,hyundai#sonata_lf(2014),17
-246,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#palisade_palisade(2018)\C-221015_13_CR06_01_A1088.jpg,hyundai#palisade_palisade(2018),11
-589,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#carens_new(2006)\C-221016_12_CR06_01_A0663.jpg,kia#carens_new(2006),24
-861,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sportage_4th(2015)\C-221015_16_CR06_01_A0230.jpg,kia#sportage_4th(2015),39
-304,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#porter_2(hr)(unknown)\C-221016_08_CR06_01_A5336.jpg,hyundai#porter_2(hr)(unknown),12
-531,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#tucson_all new(2015)\C-221016_08_CR06_01_A5315.jpg,hyundai#tucson_all new(2015),22
-654,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#k5_2th(2015)\C-221015_13_CR06_01_A0955.jpg,kia#k5_2th(2015),29
-731,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#morning_all new(2011)\C-221016_08_CR06_01_A0169.jpg,kia#morning_all new(2011),33
-783,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sorento_4th(2020)\C-221015_12_CR06_01_A0038.jpg,kia#sorento_4th(2020),37
-175,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_tg(2005)\C-221015_13_CR06_01_A0335.jpg,hyundai#grandeur_tg(2005),8
-97,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#genesis_g80(2016)\C-221015_16_CR06_01_A1123.jpg,hyundai#genesis_g80(2016),5
-436,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_new rise(2017)\C-221015_13_CR06_01_A0693.jpg,hyundai#sonata_new rise(2017),18
-379,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_dn8(2019)\C-221015_13_CR06_01_A0751.jpg,hyundai#sonata_dn8(2019),16
-743,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#morning_urban(2020)\C-221015_14_CR06_01_A0798.jpg,kia#morning_urban(2020),34
-465,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_new rise(2017)\C-221016_12_CR06_01_A0161.jpg,hyundai#sonata_new rise(2017),18
-697,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#k7_all new(2016)\C-221016_08_CR06_01_A0371.jpg,kia#k7_all new(2016),31
-268,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#porter_2(hr)(unknown)\C-221015_12_CR06_01_A0056.jpg,hyundai#porter_2(hr)(unknown),12
-85,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#genesis_g80 (rg3)(2020)\C-221016_08_CR06_01_A1118.jpg,hyundai#genesis_g80 (rg3)(2020),4
-12,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\chevrolet(gm daewoo)#spark_spark(2011)\C-221016_08_CR06_01_A5320.jpg,chevrolet(gm daewoo)#spark_spark(2011),0
-721,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#k8_k8(2021)\C-221016_12_CR06_01_A0209.jpg,kia#k8_k8(2021),32
-774,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#seltos_seltos(2019)\C-221015_13_CR06_01_A0113.jpg,kia#seltos_seltos(2019),36
-620,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#carnival_all new(2014)\C-221016_08_CR06_01_A0371.jpg,kia#carnival_all new(2014),26
-288,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#porter_2(hr)(unknown)\C-221015_17_CR06_01_A0959.jpg,hyundai#porter_2(hr)(unknown),12
-816,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sorento_the new(2017)\C-221015_08_CR06_01_A5433.jpg,kia#sorento_the new(2017),38
-840,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sorento_the new(2017)\C-221016_08_CR06_01_A0326.jpg,kia#sorento_the new(2017),38
-324,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#santafe_cm(2005)\C-221016_08_CR06_01_A5443.jpg,hyundai#santafe_cm(2005),13
-936,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\ssangyong#tivoli_air(2016)\C-221015_12_CR06_01_A0944.jpg,ssangyong#tivoli_air(2016),44
-122,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-221015_16_CR06_01_A0808.jpg,hyundai#grandeur_hg(2013),6
-403,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_lf(2014)\C-221015_16_CR06_01_A1116.jpg,hyundai#sonata_lf(2014),17
-856,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sportage_4th(2015)\C-221015_12_CR06_01_A0996.jpg,kia#sportage_4th(2015),39
-188,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_the new ig(2019)\C-221015_12_CR06_01_A5252.jpg,hyundai#grandeur_the new ig(2019),9
-594,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#carnival_4th(2020)\C-221015_13_CR06_01_A0758.jpg,kia#carnival_4th(2020),25
-603,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#carnival_4th(2020)\C-221016_08_CR06_01_A5308.jpg,kia#carnival_4th(2020),25
-631,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#carnival_r(2010)\C-221015_13_CR06_01_A0690.jpg,kia#carnival_r(2010),27
-933,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\renault samsung#sm6_sm6(2016)\C-221016_08_CR06_01_A5298.jpg,renault samsung#sm6_sm6(2016),43
-198,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_the new ig(2019)\C-221015_16_CR06_01_A0646.jpg,hyundai#grandeur_the new ig(2019),9
-53,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#avante_md(2010)\C-221016_08_CR06_01_A0976.jpg,hyundai#avante_md(2010),2
-627,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#carnival_all new(2014)\C-221016_12_CR06_01_A0044.jpg,kia#carnival_all new(2014),26
-325,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#santafe_cm(2005)\C-221016_12_CR06_01_A0158.jpg,hyundai#santafe_cm(2005),13
-446,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_new rise(2017)\C-221015_16_CR06_01_A0885.jpg,hyundai#sonata_new rise(2017),18
-521,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#starex_grand(2007)\C-221016_08_CR06_01_A5463.jpg,hyundai#starex_grand(2007),21
-190,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_the new ig(2019)\C-221015_13_CR06_01_A0426.jpg,hyundai#grandeur_the new ig(2019),9
-365,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#santafe_tm(2018)\C-221015_14_CR06_01_A1091.jpg,hyundai#santafe_tm(2018),15
-230,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#ioniq_5(2021)\C-221016_08_CR06_01_A5468.jpg,hyundai#ioniq_5(2021),10
-496,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_yf(2009)\C-221016_08_CR06_01_A5340.jpg,hyundai#sonata_yf(2009),20
-711,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#k8_k8(2021)\C-221015_13_CR06_01_A0554.jpg,kia#k8_k8(2021),32
-75,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#avante_the new ad(2018)\C-221016_08_CR06_01_A5274.jpg,hyundai#avante_the new ad(2018),3
-488,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#sonata_yf(2009)\C-221015_12_CR06_01_A5263.jpg,hyundai#sonata_yf(2009),20
-821,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\kia#sorento_the new(2017)\C-221015_12_CR06_01_A5250.jpg,kia#sorento_the new(2017),38
-109,C:\Users\QBIC\Desktop\workspace\car_model_recogize\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-221015_12_CR06_01_A0035.jpg,hyundai#grandeur_hg(2013),6
+Unnamed: 0,path,label_,label
+871,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sorento_r new(2012)\C-220721_16_CR11_02_A0369.jpg,kia#sorento_r new(2012),74
+630,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#carens_new(2006)\C-220705_13_CR13_01_A1624.jpg,kia#carens_new(2006),90
+633,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#carens_new(2006)\C-221008_13_CR06_01_A0646.jpg,kia#carens_new(2006),90
+100,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\chevrolet(gm daewoo)#spark_spark(2011)\C-221005_16_CR06_04_A0095.jpg,chevrolet(gm daewoo)#spark_spark(2011),205
+922,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sportage_new(2004)\C-220721_13_CR12_05_A2996.jpg,kia#sportage_new(2004),72
+896,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sorento_the new(2017)\C-220806_16_CR13_03_A2033.jpg,kia#sorento_the new(2017),76
+495,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#sonata_new rise(2017)\C-220806_14_CR13_05_A2680.jpg,hyundai#sonata_new rise(2017),382
+1111,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\tata daewoo#prima\C-220721_14_CR12_01_A0574.jpg,tata daewoo#prima,301
+1080,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\ssangyong#rexton_g4(2017)\C-220722_15_CR11_04_A1207.jpg,ssangyong#rexton_g4(2017),233
+765,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#mohavi_the master(2019)\C-221005_13_CR06_02_A0065.jpg,kia#mohavi_the master(2019),62
+665,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#carnival_r(2010)\C-220721_13_CR12_05_A0450.jpg,kia#carnival_r(2010),86
+927,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sportage_new(2004)\C-221008_14_CR06_01_A0338.jpg,kia#sportage_new(2004),72
+63,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\chevrolet(gm daewoo)#cruze_cruze(2011)\C-220928_17_CR12_04_A3428.jpg,chevrolet(gm daewoo)#cruze_cruze(2011),224
+970,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\renault samsung#qm3_newqm3(2017)\C-220721_14_CR12_01_A0424.jpg,renault samsung#qm3_newqm3(2017),126
+115,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\chevrolet(gm daewoo)#trax_trax(2013)\C-221008_14_CR06_03_A0249.jpg,chevrolet(gm daewoo)#trax_trax(2013),228
+914,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sportage_4th(2015)\C-221005_16_CR06_04_A0030.jpg,kia#sportage_4th(2015),69
+1123,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\toyota#rav4_new(2019)\C-220721_15_CR12_02_A1785.jpg,toyota#rav4_new(2019),103
+12,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\BMW#4 series_f32(2013)\C-220730_17_CR13_01_A1745.jpg,BMW#4 series_f32(2013),7
+875,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sorento_r(2009)\C-220806_13_CR13_03_A1624.jpg,kia#sorento_r(2009),75
+95,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\chevrolet(gm daewoo)#spark_spark(2011)\C-220806_14_CR13_05_A2138.jpg,chevrolet(gm daewoo)#spark_spark(2011),205
+740,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k7_the new(2012)\C-220721_13_CR11_03_A0799.jpg,kia#k7_the new(2012),41
+286,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-220722_13_CR11_05_A1675.jpg,hyundai#grandeur_hg(2013),346
+420,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#santafe_dm(2012)\C-220806_16_CR13_03_A0022.jpg,hyundai#santafe_dm(2012),372
+125,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#accent_wit(2010)\C-221008_14_CR06_01_A0341.jpg,hyundai#accent_wit(2010),396
+55,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\cadillac#model x_model_ x(2018)\C-220721_13_CR12_05_A2992.jpg,cadillac#model x_model_ x(2018),303
+1082,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\ssangyong#rexton_rexton(2001)\C-220721_14_CR12_04_A0449.jpg,ssangyong#rexton_rexton(2001),236
+3,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\BMW#3 series_e90(2005)\C-220806_15_CR13_03_A3423.jpg,BMW#3 series_e90(2005),4
+659,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#carnival_all new(2014)\C-220806_16_CR13_03_A0843.jpg,kia#carnival_all new(2014),89
+381,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#kona_kona(2017)\C-220721_13_CR11_03_A0817.jpg,hyundai#kona_kona(2017),416
+1157,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\volkswagen#arteon_arteon(2018)\C-220722_15_CR11_04_A0080.jpg,volkswagen#arteon_arteon(2018),326
+857,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sorento_4th(2020)\C-220705_15_CR13_01_A0262.jpg,kia#sorento_4th(2020),73
+295,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-220927_16_CR12_05_A3076.jpg,hyundai#grandeur_hg(2013),346
+760,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#mohavi_mohavi(2007)\C-220722_16_CR11_04_A0301.jpg,kia#mohavi_mohavi(2007),63
+435,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#santafe_the new(2020)\C-220806_16_CR13_03_A0041.jpg,hyundai#santafe_the new(2020),375
+158,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#avante_md(2010)\C-220721_13_CR12_05_A1491.jpg,hyundai#avante_md(2010),387
+663,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#carnival_all new(2014)\C-221005_16_CR06_04_A0096.jpg,kia#carnival_all new(2014),89
+934,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sportage_r(2010)\C-220722_13_CR11_05_A1674.jpg,kia#sportage_r(2010),71
+111,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\chevrolet(gm daewoo)#tosca_tosca(2006)\C-220722_15_CR11_04_A0975.jpg,chevrolet(gm daewoo)#tosca_tosca(2006),225
+323,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_ig(2016)\C-221005_16_CR06_04_A0287.jpg,hyundai#grandeur_ig(2016),347
+560,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#staria_staria(2021)\C-221005_16_CR06_04_A0023.jpg,hyundai#staria_staria(2021),370
+1023,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\renault samsung#sm6_sm6(2016)\C-220721_13_CR12_05_A0592.jpg,renault samsung#sm6_sm6(2016),139
+882,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sorento_the new(2017)\C-220705_14_CR13_01_A0862.jpg,kia#sorento_the new(2017),76
+265,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-220721_13_CR11_03_A1080.jpg,hyundai#grandeur_hg(2013),346
+469,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#sonata_lf(2014)\C-220806_13_CR13_05_A2086.jpg,hyundai#sonata_lf(2014),378
+300,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-221008_14_CR06_01_A0496.jpg,hyundai#grandeur_hg(2013),346
+790,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#morning_new(2008)\C-221005_13_CR06_02_A0055.jpg,kia#morning_new(2008),58
+693,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k3_k3(2012)\C-220806_13_CR13_03_A1830.jpg,kia#k3_k3(2012),31
+623,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\intra12345city bus#unknown\C-221005_16_CR06_04_A0314.jpg,intra12345city bus#unknown,232
+868,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sorento_4th(2020)\C-220806_17_CR13_03_A0421.jpg,kia#sorento_4th(2020),73
+434,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#santafe_the new(2020)\C-220806_15_CR13_03_A2229.jpg,hyundai#santafe_the new(2020),375
+692,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k3_k3(2012)\C-220806_13_CR13_03_A1828.jpg,kia#k3_k3(2012),31
+681,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k3_all new(2018)\C-220721_13_CR11_03_A0978.jpg,kia#k3_all new(2018),34
+39,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\BMW#x series_x5 (g05)(2019)\C-220705_13_CR13_01_A0986.jpg,BMW#x series_x5 (g05)(2019),24
+859,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sorento_4th(2020)\C-220721_14_CR12_04_A1966.jpg,kia#sorento_4th(2020),73
+78,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\chevrolet(gm daewoo)#orlando_orlando(2011)\C-220721_13_CR11_03_A0872.jpg,chevrolet(gm daewoo)#orlando_orlando(2011),211
+239,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#genesis_genesis(2008)\C-220705_13_CR13_01_A1713.jpg,hyundai#genesis_genesis(2008),410
+1100,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\ssangyong#tivoli_tivoli(2015)\C-220721_15_CR12_03_A0503.jpg,ssangyong#tivoli_tivoli(2015),261
+924,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sportage_new(2004)\C-220722_16_CR11_04_A0230.jpg,kia#sportage_new(2004),72
+391,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#mega truck\C-220705_15_CR13_01_A0989.jpg,hyundai#mega truck,360
+548,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#starex_grand(2007)\C-220721_16_CR11_02_A0285.jpg,hyundai#starex_grand(2007),368
+783,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#morning_all new(2011)\C-221005_13_CR06_02_A0110.jpg,kia#morning_all new(2011),61
+616,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\intra12345city bus#unknown\C-221005_13_CR06_02_A0044.jpg,intra12345city bus#unknown,232
+298,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-221005_16_CR06_04_A0337.jpg,hyundai#grandeur_hg(2013),346
+980,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\renault samsung#qm6_qm6(2016)\C-220721_15_CR11_01_A0484.jpg,renault samsung#qm6_qm6(2016),129
+688,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k3_k3(2012)\C-220722_15_CR11_04_A0900.jpg,kia#k3_k3(2012),31
+769,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#morning_all new(2011)\C-220721_14_CR12_04_A1228.jpg,kia#morning_all new(2011),61
+256,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#genesis_gv80(2020)\C-220721_13_CR12_05_A2545.jpg,hyundai#genesis_gv80(2020),408
+696,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k3_the new 2th(2021)\C-220722_13_CR11_05_A1372.jpg,kia#k3_the new 2th(2021),32
+987,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\renault samsung#qm6_qm6(2016)\C-221005_13_CR06_02_A0071.jpg,renault samsung#qm6_qm6(2016),129
+575,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#tucson_all new(2015)\C-220806_16_CR13_03_A2042.jpg,hyundai#tucson_all new(2015),423
+410,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#santafe_dm(2012)\C-220721_14_CR12_04_A1232.jpg,hyundai#santafe_dm(2012),372
+238,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#genesis_g90 (rs4)(2021)\C-220806_13_CR13_05_A1081.jpg,hyundai#genesis_g90 (rs4)(2021),404
+183,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#avante_the new ad(2018)\C-220806_14_CR13_03_A3551.jpg,hyundai#avante_the new ad(2018),389
+36,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\BMW#x series_x5 (f15)(2013)\C-220705_14_CR13_01_A0163.jpg,BMW#x series_x5 (f15)(2013),23
+1001,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\renault samsung#sm3_sm3(2002)\C-220721_15_CR12_02_A0588.jpg,renault samsung#sm3_sm3(2002),130
+1121,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\toyota#camry_xv70(2017)\C-220807_13_CR13_03_A3332.jpg,toyota#camry_xv70(2017),105
+795,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#morning_urban(2020)\C-220721_13_CR12_05_A2989.jpg,kia#morning_urban(2020),60
+581,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#tucson_ix(2009)\C-220705_14_CR13_01_A1682.jpg,hyundai#tucson_ix(2009),421
+844,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#seltos_seltos(2019)\C-220721_15_CR11_01_A0834.jpg,kia#seltos_seltos(2019),66
+207,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#genesis_g80 (rg3)(2020)\C-220705_14_CR13_01_A0447.jpg,hyundai#genesis_g80 (rg3)(2020),402
+785,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#morning_all new(2011)\C-221005_16_CR06_04_A0021.jpg,kia#morning_all new(2011),61
+13,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\BMW#4 series_f32(2013)\C-221005_16_CR06_04_A0030.jpg,BMW#4 series_f32(2013),7
+285,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-220722_13_CR11_05_A1223.jpg,hyundai#grandeur_hg(2013),346
+277,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_hg(2013)\C-220721_15_CR11_01_A1015.jpg,hyundai#grandeur_hg(2013),346
+478,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#sonata_lf(2014)\C-221008_14_CR06_03_A0402.jpg,hyundai#sonata_lf(2014),378
+1081,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\ssangyong#rexton_g4(2017)\C-220806_16_CR13_05_A0845.jpg,ssangyong#rexton_g4(2017),233
+719,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k5_the new(2013)\C-220929_16_CR12_01_A1674.jpg,kia#k5_the new(2013),39
+303,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_ig(2016)\C-220705_13_CR13_01_A0491.jpg,hyundai#grandeur_ig(2016),347
+321,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_ig(2016)\C-220806_17_CR13_03_A1631.jpg,hyundai#grandeur_ig(2016),347
+1125,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\toyota#sienna_sienna(1997)\C-220721_15_CR12_03_A1569.jpg,toyota#sienna_sienna(1997),104
+530,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#starex_grand the new(2017)\C-220806_15_CR13_03_A0821.jpg,hyundai#starex_grand the new(2017),367
+1018,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\renault samsung#sm5_sm5 new(2010)\C-220806_15_CR13_03_A2636.jpg,renault samsung#sm5_sm5 new(2010),134
+10,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\BMW#3 series_g20(2019)\C-220722_16_CR11_04_A0463.jpg,BMW#3 series_g20(2019),6
+260,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#genesis_gv80(2020)\C-221008_13_CR06_01_A0718.jpg,hyundai#genesis_gv80(2020),408
+776,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#morning_all new(2011)\C-220721_16_CR11_02_A0779.jpg,kia#morning_all new(2011),61
+866,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sorento_4th(2020)\C-220806_15_CR13_03_A0449.jpg,kia#sorento_4th(2020),73
+1024,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\renault samsung#sm6_sm6(2016)\C-220721_15_CR11_01_A0409.jpg,renault samsung#sm6_sm6(2016),139
+728,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k7_k7(2009)\C-220806_15_CR13_03_A2438.jpg,kia#k7_k7(2009),40
+350,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_the new ig(2019)\C-220721_15_CR12_03_A1571.jpg,hyundai#grandeur_the new ig(2019),352
+243,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#genesis_genesis(2008)\C-220902_13_CR13_05_A0312.jpg,hyundai#genesis_genesis(2008),410
+602,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#unknown\C-220721_15_CR11_01_A0561.jpg,hyundai#unknown,338
+341,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_tg(2005)\C-220806_15_CR13_03_A3423.jpg,hyundai#grandeur_tg(2005),348
+832,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#ray_ray(2011)\C-221008_14_CR06_03_A0186.jpg,kia#ray_ray(2011),55
+228,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#genesis_g80(2016)\C-220806_13_CR13_03_A0037.jpg,hyundai#genesis_g80(2016),403
+489,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#sonata_new rise(2017)\C-220721_15_CR11_01_A0654.jpg,hyundai#sonata_new rise(2017),382
+700,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k5_2th(2015)\C-220721_15_CR11_01_A0478.jpg,kia#k5_2th(2015),36
+91,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\chevrolet(gm daewoo)#spark_spark(2011)\C-220721_13_CR11_03_A0817.jpg,chevrolet(gm daewoo)#spark_spark(2011),205
+953,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\lexus#nx_nx(2014)\C-220705_14_CR13_01_A0064.jpg,lexus#nx_nx(2014),124
+644,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#carnival_4th(2020)\C-221005_13_CR06_02_A0138.jpg,kia#carnival_4th(2020),85
+326,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#grandeur_ig(2016)\C-221008_14_CR06_03_A0133.jpg,hyundai#grandeur_ig(2016),347
+246,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#genesis_gv70(2021)\C-220721_15_CR11_01_A1858.jpg,hyundai#genesis_gv70(2021),407
+1016,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\renault samsung#sm5_sm5 new(2010)\C-220722_13_CR11_05_A0003.jpg,renault samsung#sm5_sm5 new(2010),134
+928,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#sportage_r(2010)\C-220705_15_CR13_01_A1006.jpg,kia#sportage_r(2010),71
+684,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\kia#k3_all new(2018)\C-220806_17_CR13_03_A1828.jpg,kia#k3_all new(2018),34
+1091,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\ssangyong#rexton_sports(2018)\C-220806_15_CR13_03_A0836.jpg,ssangyong#rexton_sports(2018),239
+187,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#casper_casper(2021)\C-220806_14_CR13_05_A2252.jpg,hyundai#casper_casper(2021),413
+570,C:\Users\QBIC\Desktop\workspace\car_recog_project\transFG\datasets/custom\hyundai#tucson_all new(2015)\C-220721_15_CR11_01_A1779.jpg,hyundai#tucson_all new(2015),423

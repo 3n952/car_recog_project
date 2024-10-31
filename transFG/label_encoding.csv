@@ -1,239 +1,239 @@
 ,label_,label
-0,BMW#1 series_f40(2020),1
-1,BMW#2 series_f45(2015),3
-2,BMW#3 series_e90(2005),4
-3,BMW#3 series_f30(2012),5
-4,BMW#3 series_g20(2019),6
-5,BMW#4 series_f32(2013),7
-6,BMW#5 series_f10(2010),10
-7,BMW#5 series_g30(2017),11
-8,BMW#7 series_g11(2015),15
-9,BMW#x series_x3 (f25)(2011),18
-10,BMW#x series_x3 (g01)(2017),19
-11,BMW#x series_x4 (f26)(2014),20
-12,BMW#x series_x5 (f15)(2013),23
-13,BMW#x series_x5 (g05)(2019),24
-14,audi#a4_new(2005),264
-15,audi#a6_c8(2019),266
-16,audi#a6_new(2004),267
-17,audi#a8_new(2002),271
-18,audi#q5_q5(2008),274
-19,audi#q7_q7(2005),276
-20,audi#unknown, 436
-21,cadillac#model 3_model 3(2017),302
-22,cadillac#model x_model_ x(2018),303
-23,chevrolet(gm daewoo)#alpheon_alpheon(2010),210
-24,chevrolet(gm daewoo)#bolt_ev(2017),202
-25,chevrolet(gm daewoo)#cruze_cruze(2011),224
-26,chevrolet(gm daewoo)#damas_new(2008),192
-27,chevrolet(gm daewoo)#equinox_equinox(2018),214
-28,chevrolet(gm daewoo)#malibu_all new(2016),199
-29,chevrolet(gm daewoo)#malibu_malibu(2011),198
-30,chevrolet(gm daewoo)#malibu_the new(2018),197
-31,chevrolet(gm daewoo)#matiz_all new(2005),196
-32,chevrolet(gm daewoo)#orlando_orlando(2011),211
-33,chevrolet(gm daewoo)#spark_spark(2011),205
-34,chevrolet(gm daewoo)#spark_the new(2018),204
-35,chevrolet(gm daewoo)#spark_the next(2015),203
-36,chevrolet(gm daewoo)#tosca_tosca(2006),225
-37,chevrolet(gm daewoo)#traverse_traverse(2019),226
-38,chevrolet(gm daewoo)#trax_the new(2016),227
-39,chevrolet(gm daewoo)#trax_trax(2013),228
-40,ford#explorer_6th(2019),310
-41,ford#unknown,436
-42,honda#accord_all new(2008),435
-43,honda#unknown,436
-44,hyundai#accent_new(2010),397
-45,hyundai#accent_wit(2010),396
-46,hyundai#aslan_aslan(2014),390
-47,hyundai#avante_ad(2015),384
-48,hyundai#avante_cn7(2020),385
-49,hyundai#avante_hd(2006),386
-50,hyundai#avante_md(2010),387
-51,hyundai#avante_the new ad(2018),389
-52,hyundai#avante_xd(2000),388
-53,hyundai#casper_casper(2021),413
-54,hyundai#equus_equus(1999),395
-55,hyundai#equus_new(2009),394
-56,hyundai#galloper_galloper 2(1997),345
-57,hyundai#genesis_dh(2013),399
-58,hyundai#genesis_eq900(2015),400
-59,hyundai#genesis_g70(2017),401
-60,hyundai#genesis_g80 (rg3)(2020),402
-61,hyundai#genesis_g80(2016),403
-62,hyundai#genesis_g90 (rs4)(2018),405
-63,hyundai#genesis_g90 (rs4)(2021),404
-64,hyundai#genesis_genesis(2008),410
-65,hyundai#genesis_gv70(2021),407
-66,hyundai#genesis_gv80(2020),408
-67,hyundai#genesis_the new g70(2020),409
-68,hyundai#grandeur_hg(2013),346
-69,hyundai#grandeur_ig(2016),347
-70,hyundai#grandeur_tg(2005),348
-71,hyundai#grandeur_the new ig(2019),352
-72,hyundai#i30_i30(2007),340
-73,hyundai#i30_new(2011),342
-74,hyundai#i30_the new(2015),341
-75,hyundai#i40_saloon(2011),344
-76,hyundai#ioniq_5(2021),391
-77,hyundai#ioniq_ioniq(2016),393
-78,hyundai#kona_electric(2018),415
-79,hyundai#kona_kona(2017),416
-80,hyundai#kona_the new(2020),414
-81,hyundai#maxcruz_cruz(2013),359
-82,hyundai#maxcruz_the new(2015),358
-83,hyundai#mega truck,360
-84,hyundai#santafe_cm(2005),371
-85,hyundai#santafe_dm(2012),372
-86,hyundai#santafe_santafe(2000),375
-87,hyundai#santafe_the new(2020),375
-88,hyundai#santafe_tm(2018),373
-89,hyundai#sonata_dn8(2019),376
-90,hyundai#sonata_lf(2014),378
-91,hyundai#sonata_new rise(2017),382
-92,hyundai#sonata_nf(2004),379
-93,hyundai#sonata_yf hybrid(2011),380
-94,hyundai#sonata_yf(2009),381
-95,hyundai#starex_grand the new(2017),367
-96,hyundai#starex_grand(2007),368
-97,hyundai#starex_starex(1997),369
-98,hyundai#staria_staria(2021),370
-99,hyundai#tucson_all new(2015),423
-100,hyundai#tucson_ix(2009),421
-101,hyundai#tucson_new ix(2013),422
-102,hyundai#tucson_nx4(2020),420
-103,hyundai#tucson_tucson(2004),424
-104,hyundai#unknown,338
-105,hyundai#veracruz_veracruz(2006),362
-106,hyundai#xcient,397
-107,infiniti#qx series_qx60(2014),282
-108,infiniti#unknown,436
-109,intra12345city bus#unknown,232
-110,jeep#renegade_renegade(2015),289
-111,jeep#wrangler_jl(2018),287
-112,kia#carens_new(2006),90
-113,kia#carnival_4th(2020),85
-114,kia#carnival_all new(2014),89
-115,kia#carnival_r(2010),86
-116,kia#carnival_the new(2018),88
-117,kia#ev6_ev6(2021),30
-118,kia#forte_forte(2008),94
-119,kia#k3_all new(2018),34
-120,kia#k3_k3(2012),31
-121,kia#k3_the new 2th(2021),32
-122,kia#k5_2th(2015),36
-123,kia#k5_3th(2019),37
-124,kia#k5_k5(2010),38
-125,kia#k5_the new(2013),39
-126,kia#k7_all new(2016),42
-127,kia#k7_k7(2009),40
-128,kia#k7_premier(2019),43
-129,kia#k7_the new(2012),41
-130,kia#k8_k8(2021),44
-131,kia#k9_k9(2012),45
-132,kia#k9_the new 2th(2021),46
-133,kia#k9_the(2018),48
-134,kia#lotze_lotze(2005),56
-135,kia#mohavi_mohavi(2007),63
-136,kia#mohavi_the master(2019),62
-137,kia#morning_all new(2011),61
-138,kia#morning_morning(2004),59
-139,kia#morning_new(2008),58
-140,kia#morning_urban(2020),60
-141,kia#niro_ev(2018),49
-142,kia#niro_niro(2016),50
-143,kia#niro_the new(2019),51
-144,kia#opirus_opirus(2003),83
-145,kia#opirus_premium(2009),84
-146,kia#pride_all new(2011),98
-147,kia#pride_new(2005),96
-148,kia#ray_ray(2011),55
-149,kia#ray_the new(2017),54
-150,kia#seltos_seltos(2019),66
-151,kia#sorento_4th(2020),73
-152,kia#sorento_r new(2012),74
-153,kia#sorento_r(2009),75
-154,kia#sorento_sorento(2002),77
-155,kia#sorento_the new(2017),76
-156,kia#soul_soul(2008),82
-157,kia#sportage_4th(2015),69
-158,kia#sportage_5th(2021),70
-159,kia#sportage_new(2004),72
-160,kia#sportage_r(2010),71
-161,kia#stinger_stinger(2017),68
-162,kia#stonic_stonic(2017),67
-163,kia#unknown,436
-164,landrover#discovery_discovery(2004),112
-165,landrover#rangerover_4th(2013),114
-166,landrover#rangerover_sports 2th(2013),115
-167,landrover#unknown,436
-168,lexus#es_new generation(2018),119
-169,lexus#es_new(2012),120
-170,lexus#nx_nx(2014),124
-171,lexus#rx_rx_new(2009),125
-172,man#unknown,146
-173,mercedes12345benz#unknown,436
-174,mini#cooper_clubman(2007),150
-175,mini#cooper_countryman(2011),148
-176,nissan#altima_all new(2019),100
-177,nissan#altima_all new(l34)(2008),101
-178,nissan#unknown,436
-179,porsche#cayenne_cayenne(2002),315
-180,porsche#cayenne_new(2010),314
-181,porsche#panamera_panamera(2009),316
-182,renault samsung#qm3_newqm3(2017),126
-183,renault samsung#qm5_new(2011),128
-184,renault samsung#qm6_qm6(2016),129
-185,renault samsung#sm3_neo(2014),131
-186,renault samsung#sm3_new(2009),132
-187,renault samsung#sm3_sm3(2002),130
-188,renault samsung#sm5_new(2005),137
-189,renault samsung#sm5_nova(2015),136
-190,renault samsung#sm5_platinum new(2012),138
-191,renault samsung#sm5_sm5 new(2010),134
-192,renault samsung#sm5_sm5(1998),135
-193,renault samsung#sm6_sm6(2016),139
-194,renault samsung#sm7_all new(2011),142
-195,renault samsung#sm7_nova(2014),141
-196,renault samsung#sm7_sm7(2004),140
-197,renault samsung#xm3_xm3(2020),143
-198,scooter#unknown,231
-199,shuttle bus#unknown,436
-200,ssangyong#chairman_new(2003),249
-201,ssangyong#chairman_w(2008),248
-202,ssangyong#korando_beautiful(2019),256
-203,ssangyong#korando_c(2011),253
-204,ssangyong#korando_new style c(2017),254
-205,ssangyong#korando_sports(2012),257
-206,ssangyong#korando_turismo(2013),258
-207,ssangyong#kyron_kyron(2005),251
-208,ssangyong#rexton_all new(2020),240
-209,ssangyong#rexton_g4(2017),233
-210,ssangyong#rexton_rexton(2001),236
-211,ssangyong#rexton_sports khan(2019),238
-212,ssangyong#rexton_sports the new(2021),237
-213,ssangyong#rexton_sports(2018),239
-214,ssangyong#tivoli_air(2016),260
-215,ssangyong#tivoli_tivoli(2015),261
-216,ssangyong#tivoli_very new(2019),259
-217,ssangyong#unknown,436
-218,tata daewoo#prima,301
-219,tata daewoo#unknown,299
-220,toyota#camry_xv70(2017),105
-221,toyota#rav4_new(2019),103
-222,toyota#sienna_sienna(1997),104
-223,toyota#unknown,436
-224,unknown#unknown,436
-225,volkswagen#arteon_arteon(2018),326
-226,volkswagen#golf_7th(2013),321
-227,volkswagen#jetta_new(2011),328
-228,volkswagen#passat_the new(2011),333
-229,volkswagen#tiguan_2th(2018),329
-230,volkswagen#tiguan_new(2011),330
-231,volkswagen#unknown,436
-232,volvo#c30_c30(2006),179
-233,volvo#s60_1th(2000),181
-234,volvo#unknown,184
-235,volvo#v60_the new country(2th)(2019),186
-236,volvo#xc60_2th(2017),188
-237,volvo#xc90_all new(2016),191
+0,BMW#1 series_f40(2020),0
+1,BMW#2 series_f45(2015),1
+2,BMW#3 series_e90(2005),2
+3,BMW#3 series_f30(2012),3
+4,BMW#3 series_g20(2019),4
+5,BMW#4 series_f32(2013),5
+6,BMW#5 series_f10(2010),6
+7,BMW#5 series_g30(2017),7
+8,BMW#7 series_g11(2015),8
+9,BMW#x series_x3 (f25)(2011),9
+10,BMW#x series_x3 (g01)(2017),10
+11,BMW#x series_x4 (f26)(2014),11
+12,BMW#x series_x5 (f15)(2013),12
+13,BMW#x series_x5 (g05)(2019),13
+14,audi#a4_new(2005),14
+15,audi#a6_c8(2019),15
+16,audi#a6_new(2004),16
+17,audi#a8_new(2002),17
+18,audi#q5_q5(2008),18
+19,audi#q7_q7(2005),19
+20,audi#unknown,20
+21,cadillac#model 3_model 3(2017),21
+22,cadillac#model x_model_ x(2018),22
+23,chevrolet(gm daewoo)#alpheon_alpheon(2010),23
+24,chevrolet(gm daewoo)#bolt_ev(2017),24
+25,chevrolet(gm daewoo)#cruze_cruze(2011),25
+26,chevrolet(gm daewoo)#damas_new(2008),26
+27,chevrolet(gm daewoo)#equinox_equinox(2018),27
+28,chevrolet(gm daewoo)#malibu_all new(2016),28
+29,chevrolet(gm daewoo)#malibu_malibu(2011),29
+30,chevrolet(gm daewoo)#malibu_the new(2018),30
+31,chevrolet(gm daewoo)#matiz_all new(2005),31
+32,chevrolet(gm daewoo)#orlando_orlando(2011),32
+33,chevrolet(gm daewoo)#spark_spark(2011),33
+34,chevrolet(gm daewoo)#spark_the new(2018),34
+35,chevrolet(gm daewoo)#spark_the next(2015),35
+36,chevrolet(gm daewoo)#tosca_tosca(2006),36
+37,chevrolet(gm daewoo)#traverse_traverse(2019),37
+38,chevrolet(gm daewoo)#trax_the new(2016),38
+39,chevrolet(gm daewoo)#trax_trax(2013),39
+40,ford#explorer_6th(2019),40
+41,ford#unknown,41
+42,honda#accord_all new(2008),42
+43,honda#unknown,43
+44,hyundai#accent_new(2010),44
+45,hyundai#accent_wit(2010),45
+46,hyundai#aslan_aslan(2014),46
+47,hyundai#avante_ad(2015),47
+48,hyundai#avante_cn7(2020),48
+49,hyundai#avante_hd(2006),49
+50,hyundai#avante_md(2010),50
+51,hyundai#avante_the new ad(2018),51
+52,hyundai#avante_xd(2000),52
+53,hyundai#casper_casper(2021),53
+54,hyundai#equus_equus(1999),54
+55,hyundai#equus_new(2009),55
+56,hyundai#galloper_galloper 2(1997),56
+57,hyundai#genesis_dh(2013),57
+58,hyundai#genesis_eq900(2015),58
+59,hyundai#genesis_g70(2017),59
+60,hyundai#genesis_g80 (rg3)(2020),60
+61,hyundai#genesis_g80(2016),61
+62,hyundai#genesis_g90 (rs4)(2018),62
+63,hyundai#genesis_g90 (rs4)(2021),63
+64,hyundai#genesis_genesis(2008),64
+65,hyundai#genesis_gv70(2021),65
+66,hyundai#genesis_gv80(2020),66
+67,hyundai#genesis_the new g70(2020),67
+68,hyundai#grandeur_hg(2013),68
+69,hyundai#grandeur_ig(2016),69
+70,hyundai#grandeur_tg(2005),70
+71,hyundai#grandeur_the new ig(2019),71
+72,hyundai#i30_i30(2007),72
+73,hyundai#i30_new(2011),73
+74,hyundai#i30_the new(2015),74
+75,hyundai#i40_saloon(2011),75
+76,hyundai#ioniq_5(2021),76
+77,hyundai#ioniq_ioniq(2016),77
+78,hyundai#kona_electric(2018),78
+79,hyundai#kona_kona(2017),79
+80,hyundai#kona_the new(2020),80
+81,hyundai#maxcruz_cruz(2013),81
+82,hyundai#maxcruz_the new(2015),82
+83,hyundai#mega truck,83
+84,hyundai#santafe_cm(2005),84
+85,hyundai#santafe_dm(2012),85
+86,hyundai#santafe_santafe(2000),86
+87,hyundai#santafe_the new(2020),87
+88,hyundai#santafe_tm(2018),88
+89,hyundai#sonata_dn8(2019),89
+90,hyundai#sonata_lf(2014),90
+91,hyundai#sonata_new rise(2017),91
+92,hyundai#sonata_nf(2004),92
+93,hyundai#sonata_yf hybrid(2011),93
+94,hyundai#sonata_yf(2009),94
+95,hyundai#starex_grand the new(2017),95
+96,hyundai#starex_grand(2007),96
+97,hyundai#starex_starex(1997),97
+98,hyundai#staria_staria(2021),98
+99,hyundai#tucson_all new(2015),99
+100,hyundai#tucson_ix(2009),100
+101,hyundai#tucson_new ix(2013),101
+102,hyundai#tucson_nx4(2020),102
+103,hyundai#tucson_tucson(2004),103
+104,hyundai#unknown,104
+105,hyundai#veracruz_veracruz(2006),105
+106,hyundai#xcient,106
+107,infiniti#qx series_qx60(2014),107
+108,infiniti#unknown,108
+109,intra12345city bus#unknown,109
+110,jeep#renegade_renegade(2015),110
+111,jeep#wrangler_jl(2018),111
+112,kia#carens_new(2006),112
+113,kia#carnival_4th(2020),113
+114,kia#carnival_all new(2014),114
+115,kia#carnival_r(2010),115
+116,kia#carnival_the new(2018),116
+117,kia#ev6_ev6(2021),117
+118,kia#forte_forte(2008),118
+119,kia#k3_all new(2018),119
+120,kia#k3_k3(2012),120
+121,kia#k3_the new 2th(2021),121
+122,kia#k5_2th(2015),122
+123,kia#k5_3th(2019),123
+124,kia#k5_k5(2010),124
+125,kia#k5_the new(2013),125
+126,kia#k7_all new(2016),126
+127,kia#k7_k7(2009),127
+128,kia#k7_premier(2019),128
+129,kia#k7_the new(2012),129
+130,kia#k8_k8(2021),130
+131,kia#k9_k9(2012),131
+132,kia#k9_the new 2th(2021),132
+133,kia#k9_the(2018),133
+134,kia#lotze_lotze(2005),134
+135,kia#mohavi_mohavi(2007),135
+136,kia#mohavi_the master(2019),136
+137,kia#morning_all new(2011),137
+138,kia#morning_morning(2004),138
+139,kia#morning_new(2008),139
+140,kia#morning_urban(2020),140
+141,kia#niro_ev(2018),141
+142,kia#niro_niro(2016),142
+143,kia#niro_the new(2019),143
+144,kia#opirus_opirus(2003),144
+145,kia#opirus_premium(2009),145
+146,kia#pride_all new(2011),146
+147,kia#pride_new(2005),147
+148,kia#ray_ray(2011),148
+149,kia#ray_the new(2017),149
+150,kia#seltos_seltos(2019),150
+151,kia#sorento_4th(2020),151
+152,kia#sorento_r new(2012),152
+153,kia#sorento_r(2009),153
+154,kia#sorento_sorento(2002),154
+155,kia#sorento_the new(2017),155
+156,kia#soul_soul(2008),156
+157,kia#sportage_4th(2015),157
+158,kia#sportage_5th(2021),158
+159,kia#sportage_new(2004),159
+160,kia#sportage_r(2010),160
+161,kia#stinger_stinger(2017),161
+162,kia#stonic_stonic(2017),162
+163,kia#unknown,163
+164,landrover#discovery_discovery(2004),164
+165,landrover#rangerover_4th(2013),165
+166,landrover#rangerover_sports 2th(2013),166
+167,landrover#unknown,167
+168,lexus#es_new generation(2018),168
+169,lexus#es_new(2012),169
+170,lexus#nx_nx(2014),170
+171,lexus#rx_rx_new(2009),171
+172,man#unknown,172
+173,mercedes12345benz#unknown,173
+174,mini#cooper_clubman(2007),174
+175,mini#cooper_countryman(2011),175
+176,nissan#altima_all new(2019),176
+177,nissan#altima_all new(l34)(2008),177
+178,nissan#unknown,178
+179,porsche#cayenne_cayenne(2002),179
+180,porsche#cayenne_new(2010),180
+181,porsche#panamera_panamera(2009),181
+182,renault samsung#qm3_newqm3(2017),182
+183,renault samsung#qm5_new(2011),183
+184,renault samsung#qm6_qm6(2016),184
+185,renault samsung#sm3_neo(2014),185
+186,renault samsung#sm3_new(2009),186
+187,renault samsung#sm3_sm3(2002),187
+188,renault samsung#sm5_new(2005),188
+189,renault samsung#sm5_nova(2015),189
+190,renault samsung#sm5_platinum new(2012),190
+191,renault samsung#sm5_sm5 new(2010),191
+192,renault samsung#sm5_sm5(1998),192
+193,renault samsung#sm6_sm6(2016),193
+194,renault samsung#sm7_all new(2011),194
+195,renault samsung#sm7_nova(2014),195
+196,renault samsung#sm7_sm7(2004),196
+197,renault samsung#xm3_xm3(2020),197
+198,scooter#unknown,198
+199,shuttle bus#unknown,199
+200,ssangyong#chairman_new(2003),200
+201,ssangyong#chairman_w(2008),201
+202,ssangyong#korando_beautiful(2019),202
+203,ssangyong#korando_c(2011),203
+204,ssangyong#korando_new style c(2017),204
+205,ssangyong#korando_sports(2012),205
+206,ssangyong#korando_turismo(2013),206
+207,ssangyong#kyron_kyron(2005),207
+208,ssangyong#rexton_all new(2020),208
+209,ssangyong#rexton_g4(2017),209
+210,ssangyong#rexton_rexton(2001),210
+211,ssangyong#rexton_sports khan(2019),211
+212,ssangyong#rexton_sports the new(2021),212
+213,ssangyong#rexton_sports(2018),213
+214,ssangyong#tivoli_air(2016),214
+215,ssangyong#tivoli_tivoli(2015),215
+216,ssangyong#tivoli_very new(2019),216
+217,ssangyong#unknown,217
+218,tata daewoo#prima,218
+219,tata daewoo#unknown,219
+220,toyota#camry_xv70(2017),220
+221,toyota#rav4_new(2019),221
+222,toyota#sienna_sienna(1997),222
+223,toyota#unknown,223
+224,unknown#unknown,224
+225,volkswagen#arteon_arteon(2018),225
+226,volkswagen#golf_7th(2013),226
+227,volkswagen#jetta_new(2011),227
+228,volkswagen#passat_the new(2011),228
+229,volkswagen#tiguan_2th(2018),229
+230,volkswagen#tiguan_new(2011),230
+231,volkswagen#unknown,231
+232,volvo#c30_c30(2006),232
+233,volvo#s60_1th(2000),233
+234,volvo#unknown,234
+235,volvo#v60_the new country(2th)(2019),235
+236,volvo#xc60_2th(2017),236
+237,volvo#xc90_all new(2016),237
