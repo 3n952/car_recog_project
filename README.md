@@ -18,11 +18,16 @@
 ![alt text](assets/image.png)
 
 ### image crop
-![alt text](assets/C-220721_15_CR12_03_A0993.jpg)
-![alt text](assets/C-220806_14_CR13_05_A2253.jpg)
+<div align="center" style="width:image width px;">
+  <img  src="assets/C-220721_15_CR12_03_A0993.jpg" width=350 alt="샘플1">
+  <img  src="assets/C-220806_14_CR13_05_A2253.jpg" width=350 alt="샘플2">
+</div>
 
 ### Results
+<div align="center" style="width:image width px;"> 
+  <img  src="assets/transfg결과1.PNG" width=350 alt="결과1">
+  <img  src="assets/transfg결과2.PNG" width=350 alt="결과2">
+  <img  src="assets/transfg결과3.PNG" width=350 alt="결과3">
+</div>
+<br/>
 
-![alt text](assets/transfg결과1.PNG)
-![alt text](assets/transfg결과2.PNG)
-![alt text](assets/transfg결과3.PNG)
